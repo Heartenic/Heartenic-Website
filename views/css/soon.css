@@ -85,21 +85,6 @@
     text-align: center;
   }
 
-  .boton-admins:hover {
-    transform:scale(1.03); /*Zoom*/
-    filter: drop-shadow(0 0 8px rgba(0,0,0,0.3));
-    font-weight: 550;
-  }
-    
-  .boton-admins{
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #2c3e50;
-    max-width: 200px;
-    margin-top: 15px;
-    margin-left: 35%;
-  }
-
   .aura{
     max-width: 31%;
     object-fit: contain;
@@ -127,7 +112,7 @@
 
   .footer{
     display: flex;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     padding-top: 25px;
     padding-bottom: 30px;
     padding-left: 50px;
