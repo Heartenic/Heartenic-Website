@@ -1,0 +1,342 @@
+
+/* todos los elementos HTML, 'reset' quitando estilos del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: order-box;
+  }
+  
+  /* todos los elementos HTML en el cuerpo (atributos generales de la pagina) */
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    background: OldLace;
+    color: #212529;
+    padding: none;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit; /* Mantiene el color del texto original */
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+
+  .barra-superior{
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 15px;
+    padding-bottom: 12px;
+    background-color: OldLace;
+    position: fixed;  /* Fija la barra */
+    top: 0;          /* Pegada arriba */
+    left: 0;         /* Pegada a la izquierda */
+    width: 100%;     /* Ancho completo */
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));
+    z-index: 1000;
+  }
+
+  .landing{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(245, 233, 215);
+    left: 0;         /* Pegada a la izquierda */
+    width: 100%;     /* Ancho completo */
+    padding-bottom: 80px;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+  }
+
+
+  /*Estilo imagen*/
+  .logo {
+    width: 80px;
+    object-fit: contain;
+    margin-top: 0.3rem;
+    margin-left: auto;
+    margin-left: 3rem;
+  }
+
+  .logo:hover {
+    transform:scale(1.03); /*Zoom*/
+    filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+  }
+
+  .linea-horizontal {
+    height: 1px;           /* Grosor de la línea */
+    width: 75%;
+    border: none;          /* Elimina el borde por defecto (si lo hay) */
+    margin: none;
+    background-color: rgb(201, 189, 175);
+  }
+
+  .login {
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background: #d94b71;
+    color: white;
+    border-radius: 30px;
+    max-width:200px;
+    height: 4%;
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin-right: 4rem;
+    margin-top: 15px;
+    font-weight: 450;
+    margin-left: auto;
+  }
+
+  .login:hover {
+    transform:scale(1.01); /*Zoom*/
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.3));
+    font-weight: 550;
+    background: #d33962;
+  }
+  
+  .espacio-inicio{
+    height: 150px;
+  }
+
+  /* Estilo del título */
+  h1 {
+    font-size: 3.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Estilo del título */
+  h2 {
+    font-size: 2rem;
+    margin-top: 3.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+
+    /* Estilo del título */
+  h3 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    text-decoration: none;
+  }
+  
+  /* Estilo del párrafo */
+  p {
+    font-size: 1.5rem;
+    color: #4d4d4d;
+    margin-top: 1.5rem;
+    max-width: 870px;
+    text-align: justify;
+  }
+
+  .texto-contenido {
+    max-width: 700px;
+    position: relative;
+  }
+
+  .socials-logo {
+    width: 100px;
+    margin: 30px;
+  }
+
+  .socials-grid {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: flex;          /* Activa Flexbox */
+    gap: 80px;             /* Espacio entre los iconos (opcional) */
+    align-items: center;  /* Centra verticalmente (útil si hay texto) */
+  }
+
+  .logo-container {
+    background-color: OldLace;   /* Centra verticalmente (útil si hay texto) */
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
+    width: 160px;
+    height: 160px;
+    padding: 5px;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    display: flex; /* Convierte el div en un contenedor flexible */
+  }
+
+  .logo-container:hover {
+    transform:scale(1.03); /*Zoom*/
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.2));
+    background-color: rgb(245, 233, 215);
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+    gap: 20px; /* Space between grid items */
+    width: 90%; /* Slightly wider than the original 60% for better spacing */
+    margin: 20px auto 0; /* Center horizontally, add top margin */
+  }
+
+  .content-container {
+    background-color: rgb(245, 233, 215);   /* Centra verticalmente (útil si hay texto) */
+    margin-top: 40px;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
+    padding: 20px;
+    padding-bottom: 40px;
+    height: 550px;
+    grid-template-rows: auto 1fr;
+    display: flex; /* Convierte el div en un contenedor flexible */
+    flex-direction: column;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center;
+    gap: 5px;
+    object-fit: contain;
+  }
+
+  .content-container:hover {
+    transform:scale(1.01); /*Zoom*/
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.2));
+    background-color: oldlace;
+  }
+
+  .imagen-contenido {
+    height: 88%;
+    width: 90%;
+    object-fit: contain;
+    margin-top: 4%;
+  }
+
+  .contenedor-imagen {
+    border-radius: 20px;
+    max-height: 85%;
+    width: 90%;
+    margin-top: 20px;
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.2));
+    overflow: hidden; /* Recorta el exceso si es necesario */
+    object-fit: contain;
+    position: relative;
+  }
+
+  .footer{
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 25px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    background-color: OldLace;
+    bottom: 0;          /* Pegada arriba */
+    left: 0;         /* Pegada a la izquierda */
+    width: 100%;     /* Ancho completo */
+    z-index: 1000;
+    margin-top: 180px;
+  }
+
+  .icono-bajar{
+    display: none;
+  }
+
+  @media (orientation: portrait) {
+
+    .espacio-inicio{
+      height: 90px;
+    }
+
+    .icono-bajar{
+      display: block;
+    }
+
+    .logo {
+      max-width: 60px;
+      margin-left: auto;
+      margin-left: 1.9rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      left: 46%;
+      margin-top: 10px;
+    }
+
+    .login {
+      font-size: 0.8rem;
+      margin-top: 15px;
+      margin-right: 1.4rem;
+      margin-bottom: 0.3rem;
+      font-weight: 500;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 5rem;
+      max-width: 80%;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 1.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+
+    .linea-horizontal {
+      width: 80%;
+      margin-top: 3rem;
+      margin-bottom: none;
+    }
+
+    .socials-logo {
+      margin: 15px;
+      width: 90px;
+    }
+
+    .socials-grid {
+      gap: 0px;             /* Espacio entre los iconos (opcional) */
+    }
+
+    .logo-container {
+      width: 140px;
+      height: 140px;
+      padding: 5px;
+    }
+
+    .grid-container {
+      grid-template-columns: repeat(1, 1fr); /* one column */
+    }
+
+    .content-container {
+      height: auto;
+    }
+
+    .contenedor-imagen {
+      max-height: 280px;
+      filter: none;
+    }
+
+    .imagen-contenido {
+      margin-left: 12px;
+    }
+
+    .footer{
+      display: block;
+      margin-top: 120px;
+    }
+  }
