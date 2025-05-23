@@ -163,6 +163,7 @@
   .socials-grid {
     margin-top: none;
     margin-bottom: 60px;
+    margin-right: 5%;
     display: flex;          /* Activa Flexbox */
     gap: 20%;             /* Espacio entre los iconos (opcional) */
     align-items: center;  /* Centra verticalmente (útil si hay texto) */
@@ -273,7 +274,7 @@
     }
 
     .texto-main{
-    margin-top: 16%;
+    margin-top: 24%;
     width: 90%;
     margin-right: 1%;
     }
@@ -323,13 +324,15 @@
     }
 
     .socials-grid {
-      gap: none;             /* Espacio entre los iconos (opcional) */
+      gap: 10px;             /* Espacio entre los iconos (opcional) */
     }
 
     .logo-container {
       width: 80px;
       height: 80px;
       padding: 14px;
+      margin-left: 10px;
+      margin-right: 10px;
     }
 
     .grid-container {
