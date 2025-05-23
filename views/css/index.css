@@ -32,9 +32,10 @@
   }
 
   .texto-main{
-    width: 52%;
+    width: 46%;
     padding: none;
     margin: none;
+    margin-top: 7%;
     filter: none;
   }
 
@@ -163,7 +164,7 @@
     margin-top: none;
     margin-bottom: 60px;
     display: flex;          /* Activa Flexbox */
-    gap: 9%;             /* Espacio entre los iconos (opcional) */
+    gap: 20%;             /* Espacio entre los iconos (opcional) */
     align-items: center;  /* Centra verticalmente (útil si hay texto) */
   }
 
@@ -272,7 +273,7 @@
     }
 
     .texto-main{
-    margin-top: 8%;
+    margin-top: 16%;
     width: 85%;
     margin-right: 2%;
     }
@@ -318,17 +319,17 @@
 
     .socials-logo {
       margin: none;
-      width: 60px;
+      width: 52px;
     }
 
     .socials-grid {
-      gap: 10px;             /* Espacio entre los iconos (opcional) */
+      gap: none;             /* Espacio entre los iconos (opcional) */
     }
 
     .logo-container {
       width: 80px;
       height: 80px;
-      padding: 10px;
+      padding: 14px;
     }
 
     .grid-container {
