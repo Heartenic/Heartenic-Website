@@ -31,6 +31,13 @@
     text-decoration: none;
   }
 
+  .texto-main{
+    width: 85%;
+    padding: none;
+    margin: none;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
+  }
+
   .barra-superior{
     display: flex;
     grid-template-columns: repeat(3, 1fr);
@@ -148,7 +155,7 @@
   }
 
   .socials-logo {
-    width: 100px;
+    width: 70px;
     margin: 30px;
   }
 
@@ -163,12 +170,12 @@
   .logo-container {
     background-color: OldLace;   /* Centra verticalmente (útil si hay texto) */
     margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
     border-radius: 20px;
     filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
-    width: 160px;
-    height: 160px;
+    width: 120px;
+    height: 120px;
     padding: 5px;
     justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center; /* Centra los elementos verticalmente */
@@ -262,6 +269,10 @@
       max-width: 60px;
       margin-left: auto;
       margin-left: 1.9rem;
+    }
+
+    .texto-main{
+    width: 95%;
     }
 
     h1 {
