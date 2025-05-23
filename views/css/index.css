@@ -32,9 +32,10 @@
   }
 
   .texto-main{
-    width: 75%;
+    width: 52%;
     padding: none;
     margin: none;
+    filter: none;
   }
 
   .barra-superior{
@@ -271,7 +272,8 @@
     }
 
     .texto-main{
-    width: 92%;
+    margin-top: 8%;
+    width: 85%;
     margin-right: 2%;
     }
 
@@ -316,17 +318,17 @@
 
     .socials-logo {
       margin: none;
-      width: 40px;
+      width: 60px;
     }
 
     .socials-grid {
-      gap: 30px;             /* Espacio entre los iconos (opcional) */
+      gap: 10px;             /* Espacio entre los iconos (opcional) */
     }
 
     .logo-container {
       width: 80px;
       height: 80px;
-      padding: 20px;
+      padding: 10px;
     }
 
     .grid-container {
