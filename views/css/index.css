@@ -35,7 +35,7 @@
     width: 40%;
     padding: none;
     margin: none;
-    margin-top: 7%;
+    margin-top: 5%;
     filter: none;
   }
 
@@ -325,6 +325,7 @@
 
     .socials-grid {
       gap: 10px;             /* Espacio entre los iconos (opcional) */
+      margin-right: 4%;
     }
 
     .logo-container {
