@@ -205,7 +205,7 @@
     filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
     padding: 20px;
     padding-bottom: 40px;
-    height: 550px;
+    height: 53%;
     grid-template-rows: auto 1fr;
     display: flex; /* Convierte el div en un contenedor flexible */
     flex-direction: column;
