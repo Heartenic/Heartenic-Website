@@ -52,6 +52,7 @@
     filter: drop-shadow(0 0 4px rgba(0,0,0,0.3));
     font-weight: 550;
     background: #d33962;
+    transition: all 0.3s ease;
   }
 
   /* Estilo del título */
@@ -152,6 +153,7 @@
     margin-top: 0.3rem;
     margin-left: auto;
     margin-left: 3rem;
+    transition: all 0.3s ease;
   }
 
   .logo:hover {

@@ -55,6 +55,7 @@
       width:15%;
       font-size: 1.3rem;
       text-decoration: none;
+      transition: all 0.3s ease;
     }
   
     .boton-volver:hover {

@@ -72,6 +72,7 @@
     margin-top: 0.3rem;
     margin-left: auto;
     margin-left: 3rem;
+    transition: all 0.3s ease;
   }
 
   .logo:hover {
@@ -102,6 +103,7 @@
     margin-top: 15px;
     font-weight: 450;
     margin-left: auto;
+    transition: all 0.3s ease;
   }
 
   .login:hover {
@@ -182,6 +184,7 @@
     justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center; /* Centra los elementos verticalmente */
     display: flex; /* Convierte el div en un contenedor flexible */
+    transition: all 0.3s ease;
   }
 
   .logo-container:hover {
@@ -213,6 +216,7 @@
     align-items: center;
     gap: 5px;
     object-fit: contain;
+    transition: all 0.3s ease;
   }
 
   .content-container:hover {
