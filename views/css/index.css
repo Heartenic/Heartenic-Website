@@ -44,12 +44,13 @@
     grid-template-columns: repeat(3, 1fr);
     padding-top: 15px;
     padding-bottom: 12px;
-    background-color: OldLace;
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(40px); /* Efecto de desenfoque en el fondo */
     position: fixed;  /* Fija la barra */
     top: 0;          /* Pegada arriba */
     left: 0;         /* Pegada a la izquierda */
     width: 100%;     /* Ancho completo */
-    filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
     z-index: 1000;
   }
 
@@ -92,7 +93,7 @@
     padding: 10px;
     padding-right: 20px;
     padding-left: 20px;
-    background: #d94b71;
+    background: #d45476;
     color: white;
     border-radius: 30px;
     max-width:200px;
@@ -101,7 +102,7 @@
     text-decoration: none;
     margin-right: 4rem;
     margin-top: 15px;
-    font-weight: 450;
+    font-weight: 500;
     margin-left: auto;
     transition: all 0.3s ease;
   }
@@ -109,7 +110,6 @@
   .login:hover {
     transform:scale(1.01); /*Zoom*/
     filter: drop-shadow(0 0 4px rgba(0,0,0,0.3));
-    font-weight: 550;
     background: #d33962;
   }
   
@@ -262,6 +262,13 @@
     display: none;
   }
 
+    /* Ajuste para pantallas 1440p o superiores */
+  @media (min-width: 2560px) {
+      .content-container {
+          backdrop-filter: blur(60px); /* Más difuminado en 4K */
+      }
+  }
+
   @media (orientation: portrait) {
 
     .espacio-inicio{
@@ -270,6 +277,10 @@
 
     .icono-bajar{
       display: block;
+    }
+    
+    .barra-superior{
+      backdrop-filter: blur(30px); /* Efecto de desenfoque en el fondo */
     }
 
     .logo {

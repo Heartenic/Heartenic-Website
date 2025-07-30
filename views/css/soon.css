@@ -127,17 +127,18 @@
     margin-top: 180px;
   }
 
-    .barra-superior{
+  .barra-superior{
     display: flex;
     grid-template-columns: repeat(2, 1fr);
     padding-top: 15px;
     padding-bottom: 12px;
-    background-color: OldLace;
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(40px); /* Efecto de desenfoque en el fondo */
     position: fixed;  /* Fija la barra */
     top: 0;          /* Pegada arriba */
     left: 0;         /* Pegada a la izquierda */
     width: 100%;     /* Ancho completo */
-    filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
     z-index: 1000;
     gap: 32%;
   }
@@ -159,6 +160,13 @@
   .logo:hover {
     transform:scale(1.03); /*Zoom*/
     filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+  }
+
+    /* Ajuste para pantallas 1440p o superiores */
+  @media (min-width: 2560px) {
+      .content-container {
+          backdrop-filter: blur(60px); /* Más difuminado en 4K */
+      }
   }
 
   @media (orientation: portrait) {
@@ -195,6 +203,7 @@
 
     .barra-superior{
       gap: 11%;
+      backdrop-filter: blur(30px); /* Más difuminado en 4K */
     }
 
     .button {
