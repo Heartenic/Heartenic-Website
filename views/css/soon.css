@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: order-box;
+    box-sizing: border-box;
   }
   
   /* todos los elementos HTML en el cuerpo (atributos generales de la pagina) */
