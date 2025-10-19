@@ -31,14 +31,6 @@
   }
 
   /* Estilo del título */
-  h1 {
-    font-size: 3.5rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    margin-right: 1rem;
-  }
-
-  /* Estilo del título */
   h2 {
     font-size: 2rem;
     margin-top: 1rem;
@@ -163,14 +155,6 @@
     height: 150px;
   }
 
-  .main{
-    max-width: 80%;
-  }
-
-  .main:hover{
-    transform: none; /*Zoom*/
-  }
-
   .button {
     font-size: 1.1rem;
     margin-top: 50px;
@@ -192,4 +176,25 @@
     margin-right: 12px;
     max-width: 80%;
   }
+
+  .grid-container {
+      grid-template-columns: repeat(1, 1fr); /* one column */
+    }
+
+    .content-container {
+      height: auto;
+    }
+
+    .contenedor-imagen {
+      max-height: 280px;
+      filter: none;
+    }
+
+    .imagen-contenido {
+      margin-left: 12px;
+    }
+
+    .quote{
+      font-size: 1.5rem;          /* Un tamaño más grande que el texto normal. */
+    }
 }
