@@ -62,12 +62,16 @@ h1 {
 @media (orientation: portrait) {
 
   .barra-superior {
-    padding: 12px 1rem; /* Reducimos el padding horizontal */
+    padding: 12px 0.5rem 12px 1rem;
     backdrop-filter: blur(30px);
   }
 
-  .logo-container, .spacer {
-    width: 60px; /* Reducimos el tamaño del logo y el espaciador */
+  /* Reducimos el tamaño del logo y el espaciador */
+  .logo-container{
+    width: 60px;
+  }
+  .spacer {
+    width: 20px;
   }
 
   h1 {

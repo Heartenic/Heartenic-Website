@@ -66,6 +66,15 @@
     justify-content: center;
   }
 
+  .luis{
+    object-fit: contain;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: none;
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
+    border-radius: 2%;
+  }
+
   .main:hover{
     transform:scale(1.03); /*Zoom*/
     filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<!-- Head pagina Bolaños -->
+<!-- Head pagina Herramientas -->
   <head>
     <title>Herramientas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/topNfoot.css">
-    <link rel="stylesheet" href="css/testers.css">
+    <link rel="stylesheet" href="css/herramientas.css">
     <link rel="shortcut icon" href="images/logoHeartenic.png">
   </head>
 
@@ -23,8 +23,35 @@
 
     <div class="espacio-inicio"></div>
 
-    <div class="main">
+    <div class="grid-grid">
+        <div class="grid-container">
+            <!-- Positive API -->
+            <a class="content-container" href="https://positive-api.online" target="_blank">
+                <h3>The positive API</h3>
+                <div class="linea-horizontal"></div>
+                <p class="texto-contenido">
+                    Un API gratuita de frases positivas.<br>
+                    Ayudándote a construir tecnología más humana...
+                </p>
+                <div class="contenedor-imagen" style="background-color: #ffffbf;">
+                    <div class="quote-container">
+                        <span id="quote-display" class="quote">Cargando frases...</span>
+                    </div>
+                </div>
+                <p style="text-align: center;">Leer más ></p>
+            </a>
 
+            <!-- Diseño del meditador -->
+            <a class="content-container" href="downloads/Documentacion-Meditador-Bolsillo.pdf" target="_blank">
+                <h3>Diseño del meditador</h3>
+                <div class="linea-horizontal"></div>
+                <p class="texto-contenido">Una plataforma open-source basada en ESP32.</p>
+                <div class="contenedor-imagen" style="background-color: pink;">
+                <img class="imagen-contenido" src="images/meditadoresDos.png" alt="imagen del meditador">
+                </div>
+                <p style="text-align: center;">Leer más ></p>
+            </a>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -34,6 +61,9 @@
         Tecnología consciente para el bienestar humano.
       </p>
     </div>
+
+    <script src="scripts/quotes.js"></script>
+
   </body>
 
 </html>
