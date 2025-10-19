@@ -56,14 +56,6 @@
   }
 
   /* Estilo del título */
-  h1 {
-    font-size: 3.5rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    left: 47%;
-  }
-
-  /* Estilo del título */
   h2 {
     font-size: 2rem;
     margin-top: 3.5rem;
@@ -162,12 +154,6 @@
   .espacio-inicio{
     height: 110px;
   }
-
-    h1 {
-      font-size: 1.5rem;
-      margin-top: 20px;
-      left: 46%;
-    }
 
     .button {
       font-size: 1.1rem;

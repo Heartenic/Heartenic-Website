@@ -71,24 +71,8 @@
     filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
   }
 
-  .luis{
-    object-fit: contain;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    padding: none;
-    filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
-    border-radius: 2%;
-  }
-
   .espacio-inicio{
     height: 200px;
-  }
-
-    /* Ajuste para pantallas 1440p o superiores */
-  @media (min-width: 2560px) {
-      .content-container {
-          backdrop-filter: blur(60px); /* Más difuminado en 4K */
-      }
   }
 
 @media (orientation: portrait) {
@@ -108,12 +92,6 @@
 
   .main:hover{
     transform: none; /*Zoom*/
-  }
-
-  h1 {
-    font-size: 1.5rem;
-    margin-top: 20px;
-    margin-right: 10px;
   }
 
   .button {

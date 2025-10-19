@@ -1,8 +1,8 @@
 .barra-superior{
     display: flex;
-    grid-template-columns: repeat(2, 1fr);
-    padding-top: 15px;
-    padding-bottom: 12px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 3rem;
     background-color: rgba(255, 255, 255, 0);
     backdrop-filter: blur(40px); /* Efecto de desenfoque en el fondo */
     position: fixed;  /* Fija la barra */
@@ -11,22 +11,37 @@
     width: 100%;     /* Ancho completo */
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
     z-index: 1000;
-    gap: 34%;
+}
+
+.logo-container {
+    width: 80px; /* Ancho fijo para el contenedor del logo */
+    flex-shrink: 0; /* Evita que se encoja si el título es muy largo */
 }
 
     /*Estilo imagen*/
 .logo {
-    width: 80px;
+    width: 100%;
     object-fit: contain;
-    margin-top: 0.3rem;
-    margin-left: auto;
-    margin-left: 3rem;
+    display: block;
     transition: all 0.3s ease;
 }
 
 .logo:hover {
     transform:scale(1.03); /*Zoom*/
     filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+}
+
+/* Estilo del título */
+h1 {
+  font-size: 3.5rem;
+  color: #2c3e50;
+  margin: 0;
+  text-align: center;
+}
+
+/* El espaciador invisible */
+.spacer {
+    width: 80px; /* IMPORTANTE: Mismo ancho que .logo-container */
 }
 
 .footer{
@@ -43,22 +58,25 @@
     margin-top: 180px;
 }
 
+/* --- vista en vertical (Portrait) --- */
 @media (orientation: portrait) {
 
-  .logo {
-    max-width: 60px;
-    margin-left: auto;
-    margin-left: 0.7rem;
+  .barra-superior {
+    padding: 12px 1rem; /* Reducimos el padding horizontal */
+    backdrop-filter: blur(30px);
   }
 
-  .barra-superior{
-    gap: 7%;
-    backdrop-filter: blur(30px); /* Más difuminado en 4K */
+  .logo-container, .spacer {
+    width: 60px; /* Reducimos el tamaño del logo y el espaciador */
   }
 
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Los estilos del footer no necesitan cambiarse para este problema */
   .footer{
     display: block;
     margin-top: 120px;
   }
-  
 }
