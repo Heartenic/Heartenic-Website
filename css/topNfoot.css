@@ -1,0 +1,64 @@
+.barra-superior{
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 15px;
+    padding-bottom: 12px;
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(40px); /* Efecto de desenfoque en el fondo */
+    position: fixed;  /* Fija la barra */
+    top: 0;          /* Pegada arriba */
+    left: 0;         /* Pegada a la izquierda */
+    width: 100%;     /* Ancho completo */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    gap: 34%;
+}
+
+    /*Estilo imagen*/
+.logo {
+    width: 80px;
+    object-fit: contain;
+    margin-top: 0.3rem;
+    margin-left: auto;
+    margin-left: 3rem;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform:scale(1.03); /*Zoom*/
+    filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+}
+
+.footer{
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 25px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    background-color: OldLace;
+    bottom: 0;          /* Pegada arriba */
+    left: 0;         /* Pegada a la izquierda */
+    width: 100%;     /* Ancho completo */
+    z-index: 1000;
+    margin-top: 180px;
+}
+
+@media (orientation: portrait) {
+
+  .logo {
+    max-width: 60px;
+    margin-left: auto;
+    margin-left: 0.7rem;
+  }
+
+  .barra-superior{
+    gap: 7%;
+    backdrop-filter: blur(30px); /* Más difuminado en 4K */
+  }
+
+  .footer{
+    display: block;
+    margin-top: 120px;
+  }
+  
+}
