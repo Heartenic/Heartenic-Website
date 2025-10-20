@@ -167,4 +167,11 @@
       margin-bottom: none;
     }
 
+    /* Sin hover animations en movil (buggean) */
+    *:hover {
+      animation: none;
+      transition: none;
+      transform: none;
+    }
+
   }

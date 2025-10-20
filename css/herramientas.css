@@ -201,4 +201,12 @@
   .quote{
     font-size: 1.5rem;
   }
+
+  /* Sin hover animations en movil (buggean) */
+  *:hover {
+    animation: none;
+    transition: none;
+    transform: none;
+  }
+
 }

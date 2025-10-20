@@ -383,4 +383,12 @@
       display: block;
       margin-top: 120px;
     }
+
+    /* Sin hover animations en movil (buggean) */
+    *:hover {
+      animation: none;
+      transition: none;
+      transform: none;
+    }
+
   }
