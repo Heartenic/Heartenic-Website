@@ -31,14 +31,6 @@
   }
 
   /* Estilo del título */
-  h1 {
-    font-size: 3.5rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    margin-right: 1rem;
-  }
-
-  /* Estilo del título */
   h2 {
     font-size: 2rem;
     margin-top: 1rem;
@@ -86,7 +78,7 @@
 
 @media (orientation: portrait) {
 
-  * {
+  body {
     padding-left: 5%;
     padding-right: 5%;
   }

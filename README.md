@@ -11,5 +11,3 @@ Este repositorio contiene el código fuente de la página web oficial de **Heart
 ## 🚀 Deploy automático
 
 Este sitio se despliega automáticamente a través de **GitHub Pages**. Cada vez que se hace push a la rama principal, el sitio se actualiza.
-
-### Heartenic: fase 1

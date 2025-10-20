@@ -31,30 +31,6 @@
     text-decoration: none;
   }
 
-  .button {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    padding: 15px;
-    padding-right: 25px;
-    padding-left: 25px;
-    background: #d94b71;
-    color: white;
-    border-radius: 32px;
-    height: 4%;
-    font-size: 1.5rem;
-    text-decoration: none;
-    margin-top: 75px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-  }
-
-  .button:hover {
-    transform:scale(1.01); /*Zoom*/
-    filter: drop-shadow(0 0 4px rgba(0,0,0,0.3));
-    background: #d33962;
-  }
-
   /* Estilo del título */
   h2 {
     font-size: 2rem;

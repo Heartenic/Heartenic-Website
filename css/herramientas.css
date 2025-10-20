@@ -103,7 +103,7 @@
 
   .content-container:hover {
     transform:scale(1.01); /*Zoom*/
-    filter: drop-shadow(0 0 8px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 -4px 18px rgba(0,0,0,0.6));/* x y blur color */ 
     background-color: oldlace;
   }
 
@@ -113,6 +113,7 @@
     object-fit: contain;
     margin-top: 4%;
     margin-bottom: 4%;
+    filter: drop-shadow(0px 8px 10px rgba(0, 0, 0, 0.5));
   }
 
   .quote-container{
