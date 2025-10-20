@@ -146,55 +146,58 @@
 
 @media (orientation: portrait) {
 
-  * {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
+ body {
+  padding-left: 3%;
+  padding-right: 3%;
+ }
 
-  .espacio-inicio{
-    height: 150px;
-  }
+ .espacio-inicio{
+  height: 150px;
+ }
 
-  .button {
-    font-size: 1.1rem;
-    margin-top: 50px;
-    margin-right: 1.4rem;
-    margin-bottom: 0.3rem;
-    font-weight: 500;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+ .button {
+  font-size: 1.1rem;
+  margin-top: 50px;
+  margin-right: 1.4rem;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  padding-left: 10px;
+  padding-right: 10px;
+ }
 
-  h2 {
-    font-size: 1.6rem;
-    margin-top: 1rem;
-  }
+ h2 {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+ }
 
-  p {
-    font-size: 1.2rem;
-    margin-left: 12px;
-    margin-right: 12px;
-    max-width: 80%;
-  }
+ p {
+  font-size: 1.2rem;
+  margin-left: 12px;
+  margin-right: 12px;
+  max-width: 80%; 
+}
 
   .grid-container {
-      grid-template-columns: repeat(1, 1fr); /* one column */
-    }
+    grid-template-columns: repeat(1, 1fr); /* one column */
+    width: 95%; /* Aumentado de 90% para que sea 'más grueso' */
+  }
 
-    .content-container {
-      height: auto;
-    }
+  .content-container {
+    height: auto;
+  }
 
-    .contenedor-imagen {
-      max-height: 280px;
-      filter: none;
-    }
+  .contenedor-imagen {
+    max-height: 280px;
+    filter: none;
+    padding-bottom: 3.5rem;
+    padding-top: 3.5rem;
+  }
 
-    .imagen-contenido {
-      margin-left: 12px;
-    }
+  .imagen-contenido {
+    margin-left: 12px;
+  }
 
-    .quote{
-      font-size: 1.5rem;          /* Un tamaño más grande que el texto normal. */
-    }
+  .quote{
+    font-size: 1.5rem;
+  }
 }
