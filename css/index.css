@@ -1,6 +1,13 @@
-
-/* todos los elementos HTML, 'reset' quitando estilos del navegador */
-* {
+/* =========================================
+   VARIABLES & RESET
+   ========================================= */
+   :root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --bg-color: OldLace;
+  }
+  
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,9 +15,9 @@
   
   /* todos los elementos HTML en el cuerpo (atributos generales de la pagina) */
   body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
-    background: OldLace;
+    background: var(--bg-color);
     color: #212529;
     padding: none;
     min-height: 100vh;
@@ -32,7 +39,7 @@
   }
 
   .texto-main{
-    width: 40%;
+    width: 35%;
     padding: none;
     margin: none;
     margin-top: 5%;
@@ -42,8 +49,8 @@
   .barra-superior{
     display: flex;
     grid-template-columns: repeat(3, 1fr);
-    padding-top: 15px;
-    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-bottom: 10px;
     background-color: rgba(255, 255, 255, 0);
     backdrop-filter: blur(40px); /* Efecto de desenfoque en el fondo */
     position: fixed;  /* Fija la barra */
@@ -68,7 +75,7 @@
 
   /*Estilo imagen*/
   .logo {
-    width: 80px;
+    width: 70px;
     object-fit: contain;
     margin-top: 0.3rem;
     margin-left: auto;
@@ -79,6 +86,7 @@
   .logo:hover {
     transform:scale(1.03); /*Zoom*/
     filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+    filter: saturate(1.1);
   }
 
   .linea-horizontal {
@@ -90,19 +98,17 @@
   }
 
   .login {
-    padding: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 10px 20px;
     background: #d45476;
     color: white;
     border-radius: 30px;
     max-width:200px;
     height: 4%;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-decoration: none;
     margin-right: 4rem;
-    margin-top: 15px;
-    font-weight: 500;
+    margin-top: 18px;
+    font-weight: 550;
     margin-left: auto;
     transition: all 0.3s ease;
   }
@@ -119,13 +125,13 @@
 
   /* Estilo del título */
   h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #2c3e50;
-    margin-bottom: 0.5rem;
     position: absolute;
     display: inline-block;
     left: 50%;
     transform: translateX(-50%);
+    padding-top: 5px;
   }
 
   /* Estilo del título */
@@ -157,40 +163,56 @@
     position: relative;
   }
 
-  .socials-logo {
-    width: 70px;
-    margin: 30px;
-  }
-
+  /* Contenedor de los iconos */
   .socials-grid {
-    margin-top: none;
+    margin-top: 0; /* Cambié 'none' por '0' que es la forma correcta */
     margin-bottom: 60px;
-    margin-right: 5%;
     display: flex;          /* Activa Flexbox */
-    gap: 20%;             /* Espacio entre los iconos (opcional) */
-    align-items: center;  /* Centra verticalmente (útil si hay texto) */
+    gap: 10%;               /* Espacio entre los iconos */
+    align-items: center;    /* Centra verticalmente los iconos */
+    justify-content: center; /* Centra el grupo de iconos horizontalmente */
+    width: 100%;
   }
 
-  .logo-container {
-    background-color: OldLace;   /* Centra verticalmente (útil si hay texto) */
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
-    border-radius: 20px;
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
-    width: 120px;
-    height: 120px;
-    padding: 5px;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
-    display: flex; /* Convierte el div en un contenedor flexible */
-    transition: all 0.3s ease;
+  /* Estilo para los enlaces que contienen los iconos */
+  .social-icon-link {
+    /* Quita el subrayado y el color predeterminado del enlace */
+    text-decoration: none;
+    color: inherit; 
+    /* Importante para que el color del icono sea aplicable */
+    display: flex; 
+    /* Asegura que el enlace se comporte como un contenedor flexible */
+    transition: all 0.3s ease; /* Transición suave para transformaciones */
   }
 
-  .logo-container:hover {
-    transform:scale(1.03); /*Zoom*/
-    filter: drop-shadow(0 0 8px rgba(0,0,0,0.2));
-    background-color: rgb(245, 233, 215);
+  /* Estilo específico para los iconos de Font Awesome */
+  .social-icon-link i {
+    color: #d45476;
+    font-size: 70px; /* Tamaño del icono, equivalente al ancho anterior de la imagen */
+    /* Añade la animación de flotación */
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Definición de la animación de flotación */
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px); /* Sube el icono 10px */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  /* Efecto al pasar el mouse */
+  .social-icon-link i:hover {
+    color: #d33962; /* Asegura el color al hacer hover si el enlace lo cambia */
+  }
+
+  .social-icon-link:hover {
+    transform: scale(1.1); /* Agranda ligeramente el icono */
   }
 
 .grid-container {
@@ -254,22 +276,54 @@
     position: relative;
   }
 
-  .footer{
-    display: flex;
-    grid-template-columns: repeat(3, 1fr);
-    padding-top: 25px;
-    padding-bottom: 30px;
-    padding-left: 50px;
-    background-color: OldLace;
-    bottom: 0;          /* Pegada arriba */
-    left: 0;         /* Pegada a la izquierda */
-    width: 100%;     /* Ancho completo */
-    z-index: 1000;
-    margin-top: 180px;
-  }
-
   .icono-bajar{
     display: none;
+  }
+
+  .footer {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr; /* Izquierda, Centro (ajustado al contenido), Derecha */
+      align-items: center; /* Centrado vertical */
+      padding: 25px 50px; /* Simplificamos el padding */
+      background-color: OldLace;
+      width: 100%;
+      position: relative; /* O fixed/absolute si lo quieres pegado a la pantalla, pero relative es mejor para flujo normal */
+      z-index: 1000;
+      margin-top: 180px;
+      box-sizing: border-box; /* Importante para que el padding no rompa el ancho */
+  }
+
+  /* Alineaciones específicas para las 3 partes */
+  .footer > :nth-child(1) {
+      text-align: left; /* El texto de la izquierda a la izquierda */
+  }
+
+  .footer > :nth-child(2) {
+      display: flex;
+      justify-content: center; /* Los iconos centrados en su celda */
+  }
+
+  .footer > :nth-child(3) {
+      text-align: right; /* El texto de la derecha a la derecha */
+  }
+
+  .social-icons-footer {
+      display: flex;
+      align-items: center;
+      gap: 75px;
+  }
+  .social-icon-link-footer {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease, transform 0.3s ease;
+  }
+  .social-icon-link-footer i {
+      color: #3d3d3d;
+      font-size: 1.7rem;
+      transition: all 0.2s ease;
+  }
+  .social-icon-link-footer:hover i {
+      transform: scale(1.1);
   }
 
     /* Ajuste para pantallas 1440p o superiores */
@@ -377,11 +431,6 @@
 
     .imagen-contenido {
       margin-left: 12px;
-    }
-
-    .footer{
-      display: block;
-      margin-top: 120px;
     }
 
     /* Sin hover animations en movil (buggean) */

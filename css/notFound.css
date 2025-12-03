@@ -7,7 +7,7 @@
 
     /* todos los elementos HTML en el cuerpo (atributos generales de la pagina) */
     body {
-        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        font-family: 'Inter', sans-serif;
         line-height: 1.6;
         background: linear-gradient(to bottom, rgb(245, 233, 215), OldLace);
         color: #212529;
