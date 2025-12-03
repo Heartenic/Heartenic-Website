@@ -359,6 +359,10 @@
     margin-right: 1%;
     }
 
+    .social-icon-link i {
+      font-size: 50px; /* Tamaño del icono, equivalente al ancho anterior de la imagen */
+    }
+
     h1 {
       font-size: 2rem;
       left: 46%;
@@ -404,8 +408,7 @@
     }
 
     .socials-grid {
-      gap: 10px;             /* Espacio entre los iconos (opcional) */
-      margin-right: 4%;
+      gap: 75px;             /* Espacio entre los iconos (opcional) */
     }
 
     .logo-container {
@@ -438,6 +441,41 @@
       animation: none;
       transition: none;
       transform: none;
+    }
+
+      /* --- FOOTER MÓVIL --- */
+    .footer {
+      /* Cambiamos Grid por Flex en columna para apilar elementos */
+      display: flex;
+      flex-direction: column;
+      gap: 25px; /* Espacio entre los bloques de texto e iconos */
+      margin-top: 100px;
+      padding: 30px 20px; /* Padding más cómodo para dedos */
+      text-align: center; /* Todo centrado */
+      height: auto; /* Dejar que crezca lo necesario */
+    }
+
+    /* Forzamos alineación central en los hijos directos */
+    .footer > :nth-child(1),
+    .footer > :nth-child(2),
+    .footer > :nth-child(3) {
+      text-align: center;
+      width: 100%; /* Asegurar que ocupen el ancho para centrarse */
+      justify-content: center;
+    }
+
+    /* Arreglo de texto encimado */
+    .footer p {
+      white-space: normal; /* IMPORTANTE: Permite que el texto baje de línea */
+      font-size: 0.9rem;   /* Texto un poco más pequeño */
+      line-height: 1.5;
+    }
+
+    /* Iconos sociales */
+    .social-icons-footer {
+      gap: 20px; /* Reducimos el espacio entre iconos (75px es mucho para móvil) */
+      justify-content: center;
+      margin: 0 auto;
     }
 
   }

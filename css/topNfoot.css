@@ -99,37 +99,78 @@ h1 {
     white-space: nowrap;
   }
 
-/* --- vista en vertical (Portrait) --- */
+/* --- VISTA EN MÓVIL (Portrait) --- */
 @media (orientation: portrait) {
 
+  /* --- TOPBAR MÓVIL --- */
   .barra-superior {
-    padding: 12px 0.5rem 12px 1rem;
+    padding: 10px 15px; /* Menos padding lateral para ganar espacio */
     backdrop-filter: blur(30px);
+    /* Aseguramos que los items se centren verticalmente */
+    align-items: center; 
   }
 
-  /* Reducimos el tamaño del logo y el espaciador */
-  .logo-container{
-    width: 60px;
-  }
-  .spacer {
-    width: 20px;
+  /* Contenedor del logo: ajustamos ancho */
+  .logo-container {
+    width: 50px; /* Un poco más pequeño */
+    margin: 0;   /* Quitamos márgenes extraños */
   }
 
+  /* El logo en sí: Quitamos el margen izquierdo gigante de desktop */
+  .logo {
+    width: 100%;       /* Que llene su contenedor */
+    margin-left: 0;    /* IMPORTANTE: Esto arregla que se empuje todo */
+    margin-top: 0;
+  }
+
+  /* Título: Ajuste de tamaño para que quepa al lado del logo */
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* Tamaño legible pero compacto */
+    text-align: right; /* Alineado a la derecha o center según prefieras */
+    flex-grow: 1;      /* Ocupa el espacio restante */
+    padding-left: 10px; /* Un poco de aire entre logo y texto */
+    padding-right: 10px;
+    line-height: 1.2;
   }
 
-  /* Los estilos del footer no necesitan cambiarse para este problema */
-  .footer{
-    display: block;
-    margin-top: 120px;
+  /* El Spacer: Lo ocultamos en móvil para aprovechar el espacio */
+  .spacer {
+    display: none; 
   }
 
-  /* Sin hover animations en movil (buggean) */
-  *:hover {
-    animation: none;
-    transition: none;
-    transform: none;
+
+  /* --- FOOTER MÓVIL --- */
+  .footer {
+    /* Cambiamos Grid por Flex en columna para apilar elementos */
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espacio entre los bloques de texto e iconos */
+    margin-top: 100px;
+    padding: 30px 20px; /* Padding más cómodo para dedos */
+    text-align: center; /* Todo centrado */
+    height: auto; /* Dejar que crezca lo necesario */
   }
 
+  /* Forzamos alineación central en los hijos directos */
+  .footer > :nth-child(1),
+  .footer > :nth-child(2),
+  .footer > :nth-child(3) {
+    text-align: center;
+    width: 100%; /* Asegurar que ocupen el ancho para centrarse */
+    justify-content: center;
+  }
+
+  /* Arreglo de texto encimado */
+  .footer p {
+    white-space: normal; /* IMPORTANTE: Permite que el texto baje de línea */
+    font-size: 0.9rem;   /* Texto un poco más pequeño */
+    line-height: 1.5;
+  }
+
+  /* Iconos sociales */
+  .social-icons-footer {
+    gap: 20px; /* Reducimos el espacio entre iconos (75px es mucho para móvil) */
+    justify-content: center;
+    margin: 0 auto;
+  }
 }
