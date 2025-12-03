@@ -364,7 +364,7 @@
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       left: 46%;
       margin-top: 10px;
     }
@@ -440,7 +440,6 @@
     *:hover {
       animation: none;
       transition: none;
-      transform: none;
     }
 
       /* --- FOOTER MÓVIL --- */

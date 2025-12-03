@@ -104,33 +104,52 @@ h1 {
 
   /* --- TOPBAR MÓVIL --- */
   .barra-superior {
-    padding: 10px 15px; /* Menos padding lateral para ganar espacio */
     backdrop-filter: blur(30px);
     /* Aseguramos que los items se centren verticalmente */
-    align-items: center; 
+    align-items: center;
   }
 
-  /* Contenedor del logo: ajustamos ancho */
+  /*Contenedor del logo: ajustamos ancho */
   .logo-container {
     width: 50px; /* Un poco más pequeño */
     margin: 0;   /* Quitamos márgenes extraños */
+    flex-shrink: 0;
   }
-
   /* El logo en sí: Quitamos el margen izquierdo gigante de desktop */
-  .logo {
-    width: 100%;       /* Que llene su contenedor */
-    margin-left: 0;    /* IMPORTANTE: Esto arregla que se empuje todo */
-    margin-top: 0;
+
+    .logo {
+      max-width: 60px;
+      margin-left: auto;
+      margin-left: 1.9rem;
+    }
+  /* Título: Ajuste de tamaño para que quepa al lado del logo */
+
+/* Título: Ajuste para comportamiento flexible */
+  h1 {
+    font-size: 1.6rem; /* Inmutable */
+    line-height: 1.2;
+    
+    /* 1. Ocupar el espacio restante */
+    flex-grow: 1; 
+    
+    /* 2. Comportamiento del texto */
+    text-align: center; /* Si es corto se centra, si es largo las líneas se centran */
+    white-space: normal; /* Permite saltos de línea */
+    overflow-wrap: break-word; /* Rompe palabras si son excesivamente largas */
+    
+    /* 3. Ajuste de posición */
+    /* Quitamos margin-top para que flexbox lo centre verticalmente exacto */
+    margin: 0; 
+    
+    /* 4. Equilibrio visual */
+    /* Puse el mismo padding a ambos lados para que el "centro" sea real */
+    padding-left: 10px; 
+    padding-right: 10px; 
   }
 
-  /* Título: Ajuste de tamaño para que quepa al lado del logo */
-  h1 {
-    font-size: 1.3rem; /* Tamaño legible pero compacto */
-    text-align: right; /* Alineado a la derecha o center según prefieras */
-    flex-grow: 1;      /* Ocupa el espacio restante */
-    padding-left: 10px; /* Un poco de aire entre logo y texto */
-    padding-right: 10px;
-    line-height: 1.2;
+  /* El Spacer: Lo ocultamos en móvil para aprovechar el espacio */
+  .spacer {
+    display: none;
   }
 
   /* El Spacer: Lo ocultamos en móvil para aprovechar el espacio */
