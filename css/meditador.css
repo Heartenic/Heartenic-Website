@@ -77,32 +77,6 @@
     object-fit: contain;
   }
 
-  table {
-    padding: 20px;
-    font-size: 1.2rem;
-    color: #4d4d4d;
-    margin-top: 4.5rem;
-    max-width: 870px;
-    text-align: left;
-    border-width: 2px; /* Grosor del borde */
-    border-style: solid; /* Estilo del borde (obligatorio para que se vea) */
-    border-color: rgb(201, 189, 175);
-    border-radius: 8px;
-    filter: drop-shadow(0 0 4px rgba(0,0,0,0.1)); /* Sombra suave */
-    background-color: rgb(245, 233, 215);
-  }
-
-  th {
-    padding: 15px;
-  }
-
-  td {
-    padding: 15px;
-    border-width: 2px; /* Grosor del borde */
-    border-style: solid; /* Estilo del borde (obligatorio para que se vea) */
-    border-color: rgb(201, 189, 175);
-  }
-
   li {
     font-size: 1.5rem;
     color: #4d4d4d;
