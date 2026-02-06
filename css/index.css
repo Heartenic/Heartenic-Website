@@ -173,7 +173,7 @@ p {
 }
 
 .texto-contenido {
-  max-width: 700px;
+  max-width: 550px;
   position: relative;
 }
 
@@ -471,6 +471,8 @@ p {
     margin-left: 12px;
     margin-right: 12px;
   }
+
+  .texto-contenido {max-width: 700px;}
 
   .linea-horizontal {
     width: 80%;
