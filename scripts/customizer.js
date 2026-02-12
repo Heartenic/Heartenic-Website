@@ -4,21 +4,26 @@ import { ESPLoader, Transport } from './esptool.bundle.js';
 // DOM Elements
 const btnConnect = document.getElementById('btn-connect'); // Changed ID to match HTML
 const statusBadge = document.getElementById('connection-status');
-const groupProfile = document.getElementById('group-profile');
+// const groupProfile = document.getElementById('group-profile'); // Removed
+const groupRhythm = document.getElementById('group-rhythm');
+const groupPersonality = document.getElementById('group-personality');
 const groupFlash = document.getElementById('group-flash');
 const btnFlash = document.getElementById('btn-flash');
 const progressFill = document.getElementById('progress-fill');
 const statusText = document.getElementById('status-text');
 const logContainer = document.getElementById('log-container');
 const toggleLogBtn = document.getElementById('toggle-log');
-const profileBtns = document.querySelectorAll('.profile-btn');
+
+const rhythmBtns = document.querySelectorAll('.rhythm-btn');
+const personalityBtns = document.querySelectorAll('.personality-btn');
 
 // State
 let device = null;
 let transport = null;
 let esploader = null;
 let connected = false;
-let selectedProfile = 'a'; // Default to A
+let selectedRhythm = 'corto';       // Default
+let selectedPersonality = 'minimalista'; // Default
 
 // --- Logging Helper ---
 function log(msg, type = 'info') {
@@ -40,16 +45,23 @@ toggleLogBtn.addEventListener('click', () => {
     }
 });
 
-// --- Profile Selection ---
-profileBtns.forEach(btn => {
+// --- Rhythm Selection ---
+rhythmBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        // Remove active class from all
-        profileBtns.forEach(b => b.classList.remove('active'));
-        // Add active to clicked
+        rhythmBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        // Update state
-        selectedProfile = btn.dataset.profile;
-        log(`Perfil seleccionado: ${selectedProfile.toUpperCase()}`);
+        selectedRhythm = btn.dataset.rhythm;
+        log(`Ritmo seleccionado: ${selectedRhythm.toUpperCase()}`);
+    });
+});
+
+// --- Personality Selection ---
+personalityBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        personalityBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedPersonality = btn.dataset.personality;
+        log(`Personalidad seleccionada: ${selectedPersonality.toUpperCase()}`);
     });
 });
 
@@ -90,8 +102,12 @@ btnConnect.addEventListener('click', async () => {
         statusBadge.innerHTML = '<i class="fas fa-check-circle"></i> Conectado';
 
         // Enable other groups
-        groupProfile.style.opacity = '1';
-        groupProfile.style.pointerEvents = 'auto';
+        groupRhythm.style.opacity = '1';
+        groupRhythm.style.pointerEvents = 'auto';
+
+        groupPersonality.style.opacity = '1';
+        groupPersonality.style.pointerEvents = 'auto';
+
         groupFlash.style.opacity = '1';
         groupFlash.style.pointerEvents = 'auto';
 
@@ -117,7 +133,13 @@ btnFlash.addEventListener('click', async () => {
     progressFill.style.width = '0%';
 
     try {
-        const firmwareFile = `firmwares/profile_${selectedProfile}.bin`;
+        // Construct filename: firmwares/breathing_[RITMO]_pet_[PERSONALIDAD].bin
+        const firmwareFile = `firmwares/breathing_${selectedRhythm}_pet_${selectedPersonality}.bin`;
+
+        const msg = `Preparando para flashear: ${firmwareFile}`;
+        log(msg);
+        statusText.textContent = msg; // Update status text briefly before download
+
         log(`Descargando firmware: ${firmwareFile}...`);
 
         // 1. Fetch binary file

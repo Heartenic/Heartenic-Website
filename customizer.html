@@ -70,22 +70,46 @@
                     <div id="connection-status" class="status-badge status-disconnected">Desconectado</div>
                 </div>
 
-                <div class="control-group" id="group-profile" style="opacity: 0.5; pointer-events: none;">
-                    <h3>2. Elige tu Perfil</h3>
+                <div class="control-group" id="group-rhythm" style="opacity: 0.5; pointer-events: none;">
+                    <h3>2. Elige tu Ritmo</h3>
                     <div class="options-grid">
-                        <button class="option-card profile-btn active" data-profile="a">
-                            <i class="fas fa-bolt"></i>
-                            <span>Rápido (A)</span>
+                        <button class="option-card rhythm-btn active" data-rhythm="corto">
+                            <i class="fas fa-wind"></i>
+                            <span>Corto</span>
                         </button>
-                        <button class="option-card profile-btn" data-profile="b">
-                            <i class="fas fa-bed"></i>
-                            <span>Lento (B)</span>
+                        <button class="option-card rhythm-btn" data-rhythm="medio">
+                            <i class="fas fa-water"></i>
+                            <span>Medio</span>
+                        </button>
+                        <button class="option-card rhythm-btn" data-rhythm="largo">
+                            <i class="fas fa-om"></i>
+                            <span>Largo</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="control-group" id="group-personality" style="opacity: 0.5; pointer-events: none;">
+                    <!-- Initially disabled until connected -->
+                    <h3>3. Elige tu Compañero</h3>
+                    <div class="options-grid">
+                        <button class="option-card personality-btn active" data-personality="minimalista">
+                            <i class="fas fa-circle"></i>
+                            <span>Minimalista</span>
+                        </button>
+                        <button class="option-card personality-btn" data-personality="buho">
+                            <i class="fas fa-crow"></i>
+                            <!-- Crow as close approximation to owl if owl not available, or use feather -->
+                            <span>Buho</span>
+                        </button>
+                        <button class="option-card personality-btn" data-personality="oso">
+                            <i class="fas fa-paw"></i>
+                            <span>Oso</span>
                         </button>
                     </div>
                 </div>
 
                 <div class="control-group" id="group-flash" style="opacity: 0.5; pointer-events: none;">
-                    <h3>3. Flashear</h3>
+                    <h3>4. Flashear</h3>
                     <button class="action-btn" id="btn-flash">
                         <i class="fas fa-microchip"></i> Grabar Firmware
                     </button>
