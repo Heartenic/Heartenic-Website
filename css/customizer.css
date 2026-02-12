@@ -1,18 +1,12 @@
-
 .customizer-wrapper {
-    margin-top: 140px; /* Espacio para la navbar fija */
+    margin-top: 140px;
+    /* Espacio para la navbar fija */
     padding: 20px;
     width: 100%;
     max-width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.subtitulo-custom {
-    text-align: center;
-    margin-bottom: 40px;
-    margin-top: 0;
 }
 
 /* Grid Principal: Izquierda (Preview) y Derecha (Controles) */
@@ -28,37 +22,45 @@
 .preview-container {
     background-color: rgb(245, 233, 215);
     /* Hereda estilos de .content-container del index.css, forzamos algunos ajustes */
-    width: 100% !important; 
+    width: 100% !important;
     min-height: 500px;
     justify-content: flex-start;
     padding-top: 30px;
+    position: sticky;
+    top: 150px;
+    /* Ajusta según la altura de tu barra de navegación */
+    align-self: start;
 }
 
 .pet-display {
     width: 250px;
     height: 250px;
-    border-radius: 50%; /* Círculo para la mascota */
+    border-radius: 50%;
+    /* Círculo para la mascota */
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px 0;
     overflow: hidden;
     border: 4px solid white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: background-color 0.5s ease;
 }
 
 .imagen-mascota-animada {
 
-    image-rendering: pixelated;       /* Para Chrome, Edge y Firefox moderno */
-    image-rendering: -moz-crisp-edges; /* Para versiones antiguas de Firefox */
-    image-rendering: crisp-edges;      /* Estándar general */
+    image-rendering: pixelated;
+    /* Para Chrome, Edge y Firefox moderno */
+    image-rendering: -moz-crisp-edges;
+    /* Para versiones antiguas de Firefox */
+    image-rendering: crisp-edges;
+    /* Estándar general */
 
     width: 140%;
     height: 140%;
     object-fit: contain;
     /* Una pequeña animación de "respiración" para darle vida */
-    animation: float 4s ease-in-out infinite; 
+    animation: float 4s ease-in-out infinite;
 }
 
 /* Tabla de respiración */
@@ -72,7 +74,8 @@
 
 .breath-info h4 {
     margin-bottom: 10px;
-    color: #d45476; /* Color de acento */
+    color: #d45476;
+    /* Color de acento */
     font-family: var(--font-heading);
 }
 
@@ -109,10 +112,18 @@
 
 .control-group h3 {
     text-align: left;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-size: 1.4rem;
     color: #2c3e50;
     margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.control-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: -10px;
+    margin-bottom: 20px;
 }
 
 .options-grid {
@@ -133,7 +144,7 @@
     gap: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     color: #4d4d4d;
     font-family: var(--font-body);
 }
@@ -151,13 +162,14 @@
 /* Estado Hover */
 .option-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Estado Activo (Seleccionado) */
 .option-card.active {
     border-color: #d45476;
-    background-color: #fff0f5; /* Un rosa muy pálido */
+    background-color: #fff0f5;
+    /* Un rosa muy pálido */
 }
 
 .option-card.active i {
@@ -203,13 +215,32 @@
     transition: all 0.3s ease;
 }
 
-.status-disconnected { background: #f85149; color: white; }
-.status-connected { background: #4ade80; color: #003300; }
-.status-busy { background: #fbbf24; color: #332b00; animation: pulse 1s infinite; }
+.status-disconnected {
+    background: #f85149;
+    color: white;
+}
+
+.status-connected {
+    background: #4ade80;
+    color: #003300;
+}
+
+.status-busy {
+    background: #fbbf24;
+    color: #332b00;
+    animation: pulse 1s infinite;
+}
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
 }
 
 .progress-bar {
@@ -248,7 +279,7 @@
 
 .option-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Disable styles */
@@ -259,15 +290,18 @@
 /* --- RESPONSIVE MOBILE --- */
 @media (max-width: 900px) or (orientation: portrait) {
     .customizer-grid {
-        grid-template-columns: 1fr; /* Una sola columna */
+        grid-template-columns: 1fr;
+        /* Una sola columna */
     }
 
     .preview-container {
-        order: 1; /* Primero visualización */
+        order: 1;
+        /* Primero visualización */
     }
-    
+
     .controls-container {
-        order: 2; /* Luego controles */
+        order: 2;
+        /* Luego controles */
         margin-bottom: 40px;
     }
 
@@ -275,11 +309,11 @@
         /* En móviles muy estrechos, quizás 3 columnas sean mucho */
         gap: 10px;
     }
-    
+
     .option-card {
         padding: 15px 5px;
     }
-    
+
     .option-card i {
         font-size: 1.5rem;
     }
