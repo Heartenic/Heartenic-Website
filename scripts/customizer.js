@@ -200,7 +200,7 @@ btnFlash.addEventListener('click', async () => {
         log(`Firmware descargado (${fileData.length} bytes).`, 'success');
 
         // 3. Prepare & Flash
-        const fileArray = [{ data: binaryString, address: 0x0000 }];
+        const fileArray = [{ data: binaryString, address: 0x10000 }];
 
         statusText.textContent = "Borrando e Iniciando escritura...";
         statusBadge.className = 'status-badge status-busy';
