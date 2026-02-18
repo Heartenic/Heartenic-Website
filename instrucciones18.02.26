@@ -1,0 +1,24 @@
+Indicaciones para el Front End de la Pagina Web de Heartenic:
+
+La pagina web de Heartenic necesita un rediseño grande, pero va a tomar tiempo y de momento debemos optimizar tiempos para el lanzamiento del meditador. Por lo que empezaremos con algunas secciones concretas que son las mas clave.
+
+1. Landing:
+El landing es muy sencillo actualmente, necesitamos que lo hagas mas llamativo, sin que pierda la esencia minimalista y la vibra original. Lo que va a permanecer igual son las frases, que haya botones a las redes (no tienen que ser los mismos) y la top bar. La paleta de colores tampoco deberá cambiar.
+Lo que debe cambiar es el fondo aburrido. Puedes tomar como inspiración alguno de estos dos efectos:
+https://codepen.io/tommyho/pen/dPXEBwm
+https://codepen.io/cameronknight/pen/ogxWmBP
+Ambos son sobre un fondo negro y son muy intensos, Tambien los colores no son los mas adecuados para Heartenic. Tomes el efecto que tomes, el fondo Debera ser claro (del color actual del fondo) con los colores menos intensos/neones y de los colores de los "orbes"/gradientes actuales.
+
+2. Conoce mas:
+La sección de conoce más, es muy sencilla también. Tiene tres cards, que necesitas un nuevo estilo. El como están organizadas estas 3 cards (su layout) Tambien necesita un redesign. Lo que de nuevo no debe cambiar es el contenido de las cards (textos, imágenes y fondo de las imágenes). Debajo de la sección de Conoce más Tambien debe permanecer el footer.
+Para el diseño de las cards en si puedes inspirarte en algún diseño minimalista como este:
+https://codepen.io/veronicadev/pen/WJyOwG
+Y para el layout, prueba con un simple grid 3x1.
+
+3. Consideraciones importantes:
+Ambos cambios que te pedí están en index.html e index.css, de momento no cambies ningún otro archivo.
+Ten en cuenta la visualización y experiencia en dispositivos moviles, debe ser buena con los nuevos diseños.
+Factoriza el código correctamente para separar el html, css y js.
+Mantén las imágenes, fonts, contenido, etc. Ya estoy trabajando en un brand kit para hacerlo consistente después.
+Clona la ultima versión del repo y trabaja sobre ella.
+Cuando termines esto, vemos como continuamos con el redesign de la pagina web.
