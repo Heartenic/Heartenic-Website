@@ -33,7 +33,7 @@ const cycleData = {
 const petImages = {
     minimalista: 'images/mascota_3.png',   // Corazón anatómico
     buho: 'images/mascota_1.png',          // Búho dibujado
-    oso: 'images/mascota_1.png'            // Fallback (no existe mascota_2.png aún)
+    gato: 'images/mascota_2.png'            // Gato dibujado
 };
 
 let breathChart = null;
