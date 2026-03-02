@@ -23,6 +23,99 @@ let connected = false;
 let selectedRhythm = 'corto';       // Default
 let selectedPersonality = 'minimalista'; // Default
 
+// --- Data Definitions ---
+const cycleData = {
+    corto: { inhale: 3, hold: 2, exhale: 3, rest: 1, label: "Respiraciones: Cortas", color: 'rgba(74, 222, 128, 0.5)', border: '#4ade80' },
+    medio: { inhale: 4, hold: 3, exhale: 4, rest: 1.5, label: "Respiraciones: Medias", color: 'rgba(251, 191, 36, 0.5)', border: '#fbbf24' },
+    largo: { inhale: 4.5, hold: 4, exhale: 4.5, rest: 2.5, label: "Respiraciones: Largas", color: 'rgba(212, 84, 118, 0.5)', border: '#d45476' }
+};
+
+const petImages = {
+    minimalista: 'images/mascota_3.png',   // Corazón anatómico
+    buho: 'images/mascota_1.png',          // Búho dibujado
+    gato: 'images/mascota_2.png'            // Gato dibujado
+};
+
+let breathChart = null;
+
+function initChart() {
+    const ctx = document.getElementById('breathChart').getContext('2d');
+    breathChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['Inhalar', 'Sostener', 'Exhalar', 'Descanso'],
+            datasets: [{
+                label: 'Duración (s)',
+                data: [3, 2, 3, 1], // Default 'corto'
+                backgroundColor: 'rgba(74, 222, 128, 0.5)',
+                borderColor: '#4ade80',
+                pointBackgroundColor: '#fff',
+                pointBorderColor: '#4ade80',
+                pointHoverBackgroundColor: '#4ade80',
+                pointHoverBorderColor: '#fff',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                r: {
+                    angleLines: { display: true },
+                    suggestedMin: 0,
+                    suggestedMax: 5,
+                    ticks: {
+                        stepSize: 1,
+                        backdropColor: 'transparent'
+                    },
+                    pointLabels: {
+                        font: {
+                            family: '"Outfit", sans-serif',
+                            size: 11
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: { display: false }
+            },
+            maintainAspectRatio: false
+        }
+    });
+}
+
+function updatePreview() {
+    // Update Pet Image
+    const petImageEl = document.getElementById('pet-image');
+    if (petImageEl) {
+        const newImagePath = petImages[selectedPersonality] || petImages.minimalista;
+        console.log(`[Preview] Actualizando mascota a: ${newImagePath} para personalidad: ${selectedPersonality}`);
+
+        // Cache bust string so browser doesn't get stuck if images share names but update:
+        petImageEl.src = newImagePath + "?v=" + new Date().getTime();
+    }
+
+    // Update Text Data
+    const data = cycleData[selectedRhythm];
+    document.getElementById('breath-title-display').textContent = data.label;
+    document.getElementById('val-inhale').textContent = data.inhale + 's';
+    document.getElementById('val-hold').textContent = data.hold + 's';
+    document.getElementById('val-exhale').textContent = data.exhale + 's';
+    document.getElementById('val-rest').textContent = data.rest + 's';
+
+    // Update Chart Data
+    if (breathChart) {
+        breathChart.data.datasets[0].data = [data.inhale, data.hold, data.exhale, data.rest];
+        breathChart.data.datasets[0].backgroundColor = data.color;
+        breathChart.data.datasets[0].borderColor = data.border;
+        breathChart.data.datasets[0].pointBorderColor = data.border;
+        breathChart.data.datasets[0].pointHoverBackgroundColor = data.border;
+        breathChart.update();
+    }
+}
+
+// Initialize on load
+initChart();
+updatePreview();
+
 // --- Logging Helper ---
 function log(msg, type = 'info') {
     const ts = new Date().toLocaleTimeString();
@@ -45,21 +138,25 @@ toggleLogBtn.addEventListener('click', () => {
 
 // --- Rhythm Selection ---
 rhythmBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
         rhythmBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        selectedRhythm = btn.dataset.rhythm;
+        const targetBtn = e.currentTarget;
+        targetBtn.classList.add('active');
+        selectedRhythm = targetBtn.getAttribute('data-rhythm');
         log(`Ritmo seleccionado: ${selectedRhythm.toUpperCase()}`);
+        updatePreview();
     });
 });
 
 // --- Personality Selection ---
 personalityBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
         personalityBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        selectedPersonality = btn.dataset.personality;
+        const targetBtn = e.currentTarget;
+        targetBtn.classList.add('active');
+        selectedPersonality = targetBtn.getAttribute('data-personality');
         log(`Personalidad seleccionada: ${selectedPersonality.toUpperCase()}`);
+        updatePreview();
     });
 });
 
@@ -93,13 +190,7 @@ btnConnect.addEventListener('click', async () => {
         statusBadge.className = 'status-badge status-connected';
         statusBadge.innerHTML = '<i class="fas fa-check-circle"></i> Conectado';
 
-        // Enable other groups
-        groupRhythm.style.opacity = '1';
-        groupRhythm.style.pointerEvents = 'auto';
-
-        groupPersonality.style.opacity = '1';
-        groupPersonality.style.pointerEvents = 'auto';
-
+        // Enable flash group now that we're connected
         groupFlash.style.opacity = '1';
         groupFlash.style.pointerEvents = 'auto';
 
@@ -226,7 +317,7 @@ btnFlash.addEventListener('click', async () => {
 
         // 4. Reset Device
         log('Reiniciando dispositivo...');
-        
+
         // Envolvemos el reinicio en su propio try/catch silencioso
         // Porque a veces el "Leaving..." de esptool ya reseteó el chip y el puerto no responde.
         try {
@@ -279,11 +370,7 @@ btnFlash.addEventListener('click', async () => {
             statusBadge.textContent = 'Desconectado';
             statusBadge.innerHTML = 'Desconectado';
 
-            // Disable groups
-            groupRhythm.style.opacity = '0.5';
-            groupRhythm.style.pointerEvents = 'none';
-            groupPersonality.style.opacity = '0.5';
-            groupPersonality.style.pointerEvents = 'none';
+            // Disable flash group (rhythm & personality stay active)
             groupFlash.style.opacity = '0.5';
             groupFlash.style.pointerEvents = 'none';
 
@@ -298,3 +385,27 @@ btnFlash.addEventListener('click', async () => {
         }
     }
 });
+
+/*
+
+** Duraciones de Ciclos x Tamaño: **
+
+Corto:
+    Inhale: 3s
+    Hold: 2s
+    Exhale: 3s
+    Rest: 1s
+
+Medio:
+    Inhale: 4s
+    Hold: 3s
+    Exhale: 4s
+    Rest: 1.5s
+
+Largo:
+    Inhale: 4.5s
+    Hold: 4s
+    Exhale: 4.5s
+    Rest: 2.5s
+
+*/

@@ -24,6 +24,8 @@
     /* Hereda estilos de .content-container del index.css, forzamos algunos ajustes */
     width: 100% !important;
     min-height: 500px;
+    max-height: none;
+    /* Quita el max-height de .content-container que colapsaba la mascota */
     justify-content: flex-start;
     padding-top: 30px;
     position: sticky;
@@ -35,6 +37,9 @@
 .pet-display {
     width: 250px;
     height: 250px;
+    min-height: 250px;
+    flex-shrink: 0;
+    /* Evita que flexbox colapse este contenedor */
     border-radius: 50%;
     /* Círculo para la mascota */
     display: flex;
@@ -101,6 +106,16 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: #2c3e50;
+}
+
+/* Gráfico de Radar */
+.chart-container {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    margin: 15px auto 0;
+    display: flex;
+    justify-content: center;
 }
 
 /* --- Estilos de los Controles (Derecha) --- */
