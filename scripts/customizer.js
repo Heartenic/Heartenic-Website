@@ -190,13 +190,7 @@ btnConnect.addEventListener('click', async () => {
         statusBadge.className = 'status-badge status-connected';
         statusBadge.innerHTML = '<i class="fas fa-check-circle"></i> Conectado';
 
-        // Enable other groups
-        groupRhythm.style.opacity = '1';
-        groupRhythm.style.pointerEvents = 'auto';
-
-        groupPersonality.style.opacity = '1';
-        groupPersonality.style.pointerEvents = 'auto';
-
+        // Enable flash group now that we're connected
         groupFlash.style.opacity = '1';
         groupFlash.style.pointerEvents = 'auto';
 
@@ -376,11 +370,7 @@ btnFlash.addEventListener('click', async () => {
             statusBadge.textContent = 'Desconectado';
             statusBadge.innerHTML = 'Desconectado';
 
-            // Disable groups
-            groupRhythm.style.opacity = '0.5';
-            groupRhythm.style.pointerEvents = 'none';
-            groupPersonality.style.opacity = '0.5';
-            groupPersonality.style.pointerEvents = 'none';
+            // Disable flash group (rhythm & personality stay active)
             groupFlash.style.opacity = '0.5';
             groupFlash.style.pointerEvents = 'none';
 

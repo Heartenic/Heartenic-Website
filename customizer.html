@@ -65,17 +65,8 @@
 
             <div class="controls-container">
 
-                <div class="control-group">
-                    <h3>1. Conexión</h3>
-                    <p class="control-subtitle">Asegurate de que tu meditador este encendido</p>
-                    <button class="action-btn" id="btn-connect">
-                        <i class="fas fa-plug"></i> Conectar Meditador
-                    </button>
-                    <div id="connection-status" class="status-badge status-disconnected">Desconectado</div>
-                </div>
-
-                <div class="control-group" id="group-rhythm" style="opacity: 0.5; pointer-events: none;">
-                    <h3>2. Elige tu Ritmo</h3>
+                <div class="control-group" id="group-rhythm">
+                    <h3>1. Elige tu Ritmo</h3>
                     <p class="control-subtitle">Controla la longitud de tus respiraciones</p>
                     <div class="options-grid">
                         <button class="option-card rhythm-btn active" data-rhythm="corto">
@@ -93,9 +84,8 @@
                     </div>
                 </div>
 
-                <div class="control-group" id="group-personality" style="opacity: 0.5; pointer-events: none;">
-                    <!-- Initially disabled until connected -->
-                    <h3>3. Elige tu Compañero</h3>
+                <div class="control-group" id="group-personality">
+                    <h3>2. Elige tu Compañero</h3>
                     <p class="control-subtitle">Elige el arte y personalidad de tu dispositivo</p>
                     <div class="options-grid">
                         <button class="option-card personality-btn active" data-personality="minimalista">
@@ -112,6 +102,15 @@
                             <span>Gato</span>
                         </button>
                     </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>3. Conexión</h3>
+                    <p class="control-subtitle">Asegurate de que tu meditador este encendido</p>
+                    <button class="action-btn" id="btn-connect">
+                        <i class="fas fa-plug"></i> Conectar Meditador
+                    </button>
+                    <div id="connection-status" class="status-badge status-disconnected">Desconectado</div>
                 </div>
 
                 <div class="control-group" id="group-flash" style="opacity: 0.5; pointer-events: none;">
