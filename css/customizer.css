@@ -35,13 +35,13 @@
 }
 
 .pet-display {
-    width: 250px;
+    width: 320px;
     height: 250px;
     min-height: 250px;
     flex-shrink: 0;
     /* Evita que flexbox colapse este contenedor */
-    border-radius: 50%;
-    /* Círculo para la mascota */
+    border-radius: 15px;
+    /* Rectángulo con bordes redondeados */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,8 +61,8 @@
     image-rendering: crisp-edges;
     /* Estándar general */
 
-    width: 140%;
-    height: 140%;
+    width: 95%;
+    height: 95%;
     object-fit: contain;
     /* Una pequeña animación de "respiración" para darle vida */
     animation: float 4s ease-in-out infinite;
