@@ -21,7 +21,7 @@ let transport = null;
 let esploader = null;
 let connected = false;
 let selectedRhythm = 'corto';       // Default
-let selectedPersonality = 'minimalista'; // Default
+let selectedPersonality = 'space'; // Default
 
 // --- Data Definitions ---
 const cycleData = {
@@ -31,7 +31,7 @@ const cycleData = {
 };
 
 const petImages = {
-    minimalista: 'images/mascota_3.png',   // Corazón anatómico
+    space: 'images/mascota_3.png',   // Corazón anatómico
     buho: 'images/mascota_1.png',          // Búho dibujado
     gato: 'images/mascota_2.png'            // Gato dibujado
 };
@@ -86,7 +86,7 @@ function updatePreview() {
     // Update Pet Image
     const petImageEl = document.getElementById('pet-image');
     if (petImageEl) {
-        const newImagePath = petImages[selectedPersonality] || petImages.minimalista;
+        const newImagePath = petImages[selectedPersonality] || petImages.space;
         console.log(`[Preview] Actualizando mascota a: ${newImagePath} para personalidad: ${selectedPersonality}`);
 
         // Cache bust string so browser doesn't get stuck if images share names but update:
