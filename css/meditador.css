@@ -350,6 +350,12 @@ body {
   color: var(--medium-gray);
 }
 
+.feature-card li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--medium-gray);
+}
+
 .cto-section {
   margin: 0 auto;
   padding: 100px 5%;
