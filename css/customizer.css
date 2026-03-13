@@ -1,335 +1,651 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+  --rose-primary: #D03360;
+  --rose-light: #E8607E;
+  --rose-lighter: #F4ADC0;
+  --rose-dark: #A8224A;
+  --rose-bg: #FDF0F4;
+  --rose-bg-subtle: #FEF6F9;
+  --sage-green: #8BA888;
+  --sage-green-light: #A8C5A4;
+  --sage-green-dark: #6B8E68;
+  --off-white: #FAFAF8;
+  --dark-gray: #1A1A1A;
+  --medium-gray: #4A4A4A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--off-white);
+  color: var(--dark-gray);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Animated mesh gradient background (same as rest of site) */
+.mesh-gradient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #FAFAF8 0%, #FDF0F4 50%, #FEF6F9 100%);
+  animation: meshBreathing 20s ease-in-out infinite;
+}
+
+@keyframes meshBreathing {
+  0%,
+  100% {
+    background: linear-gradient(135deg, #FAFAF8 0%, #FDF0F4 50%, #FEF6F9 100%);
+  }
+
+  33% {
+    background: linear-gradient(135deg, #FEF6F9 0%, #FAFAF8 50%, #FDF0F4 100%);
+  }
+
+  66% {
+    background: linear-gradient(135deg, #FDF0F4 0%, #FEF6F9 50%, #FAFAF8 100%);
+  }
+}
+
+.subtitle {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--dark-gray);
+  text-align: center;
+  margin-top: 160px;
+  margin-bottom: 0;
+  padding: 0 5%;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -1px;
+}
+
+/* ============================================
+   LAYOUT WRAPPER
+   ============================================ */
 .customizer-wrapper {
-    margin-top: 140px;
-    /* Espacio para la navbar fija */
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  padding: 20px 5%;
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Grid Principal: Izquierda (Preview) y Derecha (Controles) */
+/* Grid: Left (Preview) — Right (Controls) */
 .customizer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 40px;
-    width: 100%;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  width: 100%;
+  align-items: start;
 }
 
-/* --- Estilos del Preview (Izquierda) --- */
+/* ============================================
+   PREVIEW CONTAINER  (Glassmorphic Card)
+   ============================================ */
 .preview-container {
-    background-color: rgb(245, 233, 215);
-    /* Hereda estilos de .content-container del index.css, forzamos algunos ajustes */
-    width: 100% !important;
-    min-height: 500px;
-    max-height: none;
-    /* Quita el max-height de .content-container que colapsaba la mascota */
-    justify-content: flex-start;
-    padding-top: 30px;
-    position: sticky;
-    top: 150px;
-    /* Ajusta según la altura de tu barra de navegación */
-    align-self: start;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 150px;
+  align-self: start;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  min-height: 500px;
 }
 
+.preview-container:hover {
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+  border-color: rgba(208, 51, 96, 0.25);
+}
+
+.preview-container h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark-gray);
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+
+/* Rose accent bar under titles */
+.linea-horizontal {
+  width: 60px;
+  height: 3px;
+  background: var(--rose-primary);
+  margin-bottom: 20px;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  align-self: flex-start;
+}
+
+.preview-container:hover .linea-horizontal {
+  width: 100px;
+}
+
+/* ============================================
+   PET DISPLAY  (Black background preserved)
+   ============================================ */
 .pet-display {
-    width: 320px;
-    height: 250px;
-    min-height: 250px;
-    flex-shrink: 0;
-    /* Evita que flexbox colapse este contenedor */
-    border-radius: 15px;
-    /* Rectángulo con bordes redondeados */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    overflow: hidden;
-    border: 4px solid white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.5s ease;
+  width: 320px;
+  height: 250px;
+  min-height: 250px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  overflow: hidden;
+  border: 2px solid rgba(208, 51, 96, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* NOTE: background-color: #000 is set inline in HTML — intentionally NOT overridden */
+}
+
+.pet-display:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  border-color: var(--rose-primary);
 }
 
 .imagen-mascota-animada {
-
-    image-rendering: pixelated;
-    /* Para Chrome, Edge y Firefox moderno */
-    image-rendering: -moz-crisp-edges;
-    /* Para versiones antiguas de Firefox */
-    image-rendering: crisp-edges;
-    /* Estándar general */
-
-    width: 95%;
-    height: 95%;
-    object-fit: contain;
-    /* Una pequeña animación de "respiración" para darle vida */
-    animation: float 4s ease-in-out infinite;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  width: 95%;
+  height: 95%;
+  object-fit: contain;
+  animation: float 4s ease-in-out infinite;
 }
 
-/* Tabla de respiración */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ============================================
+   BREATHING INFO TABLE
+   ============================================ */
 .breath-info {
-    width: 85%;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 15px;
-    border-radius: 15px;
-    margin-top: 10px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 18px 20px;
+  border-radius: 16px;
+  margin-top: 16px;
+  border: 1px solid rgba(208, 51, 96, 0.1);
 }
 
 .breath-info h4 {
-    margin-bottom: 10px;
-    color: #d45476;
-    /* Color de acento */
-    font-family: var(--font-heading);
+  margin-bottom: 12px;
+  color: var(--rose-primary);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.3px;
 }
 
 .breath-table {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .breath-stat {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .stat-label {
-    font-size: 0.8rem;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  font-size: 0.75rem;
+  color: var(--medium-gray);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 600;
 }
 
 .stat-value {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #2c3e50;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark-gray);
 }
 
-/* Gráfico de Radar */
+/* ============================================
+   RADAR CHART
+   ============================================ */
 .chart-container {
-    width: 100%;
-    max-width: 300px;
-    height: 300px;
-    margin: 15px auto 0;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  margin: 15px auto 0;
+  display: flex;
+  justify-content: center;
 }
 
-/* --- Estilos de los Controles (Derecha) --- */
+/* ============================================
+   CONTROLS PANEL  (Right column)
+   ============================================ */
 .controls-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.control-group {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top rose accent line on hover (like tool-card) */
+.control-group::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--rose-primary) 0%, var(--rose-light) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.control-group:hover::before {
+  transform: scaleX(1);
+}
+
+.control-group:hover {
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.10);
+  border-color: rgba(208, 51, 96, 0.25);
 }
 
 .control-group h3 {
-    text-align: left;
-    margin-bottom: 20px;
-    font-size: 1.4rem;
-    color: #2c3e50;
-    margin-top: 0;
-    margin-bottom: 5px;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--dark-gray);
+  margin: 0 0 4px 0;
+  letter-spacing: -0.5px;
 }
 
 .control-subtitle {
-    font-size: 1.1rem;
-    color: #666;
-    margin-top: -10px;
-    margin-bottom: 20px;
+  font-size: 15px;
+  color: var(--medium-gray);
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
+/* ============================================
+   OPTION CARDS  (Selectable buttons)
+   ============================================ */
 .options-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
 }
 
-/* Botones de opción (Tarjetas seleccionables) */
 .option-card {
-    background: white;
-    border: 2px solid transparent;
-    border-radius: 15px;
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    color: #4d4d4d;
-    font-family: var(--font-body);
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(208, 51, 96, 0.12);
+  border-radius: 16px;
+  padding: 22px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  color: var(--dark-gray);
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .option-card i {
-    font-size: 2rem;
-    color: #d45476;
-    transition: all 0.3s ease;
+  font-size: 2rem;
+  color: var(--rose-primary);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .option-card span {
-    font-weight: 600;
+  font-weight: 600;
+  font-size: 15px;
 }
 
-/* Estado Hover */
+/* Hover */
 .option-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(208, 51, 96, 0.12);
+  border-color: rgba(208, 51, 96, 0.35);
 }
 
-/* Estado Activo (Seleccionado) */
+/* Active (Selected)  — JS toggles .active */
 .option-card.active {
-    border-color: #d45476;
-    background-color: #fff0f5;
-    /* Un rosa muy pálido */
+  border-color: var(--rose-primary);
+  background: var(--rose-bg);
+  box-shadow: 0 8px 24px rgba(208, 51, 96, 0.18);
 }
 
 .option-card.active i {
-    transform: scale(1.1);
+  transform: scale(1.15);
 }
 
-/* Botón de acción final */
+/* ============================================
+   ACTION BUTTONS  (Connect / Flash)
+   ============================================ */
 .action-btn {
-    margin-top: 20px;
-    background: #d45476;
-    color: white;
-    border: none;
-    padding: 15px;
-    font-size: 1.2rem;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
+  margin-top: 20px;
+  background: linear-gradient(90deg, var(--rose-dark), var(--rose-primary), var(--rose-light));
+  background-size: 200% 100%;
+  color: white;
+  border: none;
+  padding: 16px;
+  font-size: 1.1rem;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  animation: holoBtn 4s linear infinite;
+  box-shadow: 0 4px 18px rgba(208, 51, 96, 0.25);
+  font-family: inherit;
+}
+
+@keyframes holoBtn {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Ripple effect (same as hero-btn-primary / cta-button) */
+.action-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.action-btn:hover::before {
+  width: 320px;
+  height: 320px;
 }
 
 .action-btn:hover {
-    background: #d33962;
-    transform: scale(1.02);
-    box-shadow: 0 5px 15px rgba(212, 84, 118, 0.4);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(208, 51, 96, 0.4);
 }
 
-/* Flashing UI Styles */
+.action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   STATUS BADGES  (Connected / Disconnected / Busy)
+   Classes toggled by JS — preserved exactly
+   ============================================ */
 .status-badge {
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin-top: 10px;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 12px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.02em;
 }
 
 .status-disconnected {
-    background: #f85149;
-    color: white;
+  background: rgba(248, 81, 73, 0.12);
+  color: #D03360;
+  border: 1px solid rgba(208, 51, 96, 0.2);
 }
 
 .status-connected {
-    background: #4ade80;
-    color: #003300;
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--sage-green-dark);
+  border: 1px solid rgba(139, 168, 136, 0.3);
 }
 
 .status-busy {
-    background: #fbbf24;
-    color: #332b00;
-    animation: pulse 1s infinite;
+  background: rgba(251, 191, 36, 0.12);
+  color: #92700C;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 @keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
 
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.7;
-    }
+  50% {
+    opacity: 0.65;
+  }
 }
 
+/* ============================================
+   PROGRESS BAR
+   ============================================ */
 .progress-bar {
-    height: 10px;
-    background: #e0e0e0;
-    margin-top: 15px;
-    border-radius: 5px;
-    overflow: hidden;
-    width: 100%;
+  height: 8px;
+  background: rgba(208, 51, 96, 0.1);
+  margin-top: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
 }
 
 .progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #238636, #4ade80);
-    width: 0%;
-    transition: width 0.2s;
+  height: 100%;
+  background: linear-gradient(90deg, var(--rose-dark), var(--rose-primary), var(--rose-light));
+  background-size: 200% 100%;
+  width: 0%;
+  transition: width 0.3s ease;
+  border-radius: 8px;
+  animation: holoBtn 3s linear infinite;
 }
 
 .status-text {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 5px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--medium-gray);
+  margin-top: 8px;
+  font-weight: 500;
 }
 
-/* Overriding existing option-card styles for a different theme/state */
-.option-card.active {
-    border: 2px solid #238636;
-    background-color: #f0fff4;
-}
-
-.option-card {
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.option-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Disable styles */
+/* ============================================
+   DISABLED STATE  (group-flash before connect)
+   ============================================ */
 .control-group[style*="opacity: 0.5"] {
-    filter: grayscale(1);
+  filter: grayscale(0.6);
 }
 
-/* --- RESPONSIVE MOBILE --- */
-@media (max-width: 900px) or (orientation: portrait) {
-    .customizer-grid {
-        grid-template-columns: 1fr;
-        /* Una sola columna */
-    }
+/* ============================================
+   DEV INFO  (Terminal log — discreet)
+   ============================================ */
+.dev-info {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 0 5%;
+  text-align: center;
+}
 
-    .preview-container {
-        order: 1;
-        /* Primero visualización */
-    }
+.dev-toggle {
+  background: none;
+  border: none;
+  color: rgba(74, 74, 74, 0.35);
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
 
-    .controls-container {
-        order: 2;
-        /* Luego controles */
-        margin-bottom: 40px;
-    }
+.dev-toggle:hover {
+  color: var(--medium-gray);
+  background: rgba(0, 0, 0, 0.03);
+}
 
-    .options-grid {
-        /* En móviles muy estrechos, quizás 3 columnas sean mucho */
-        gap: 10px;
-    }
+.dev-console {
+  background: rgba(10, 10, 14, 0.92);
+  color: #6af06a;
+  padding: 14px 18px;
+  border-radius: 12px;
+  height: 160px;
+  overflow-y: auto;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  margin-top: 8px;
+  text-align: left;
+  border: 1px solid rgba(208, 51, 96, 0.1);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
 
-    .option-card {
-        padding: 15px 5px;
-    }
+.dev-console::-webkit-scrollbar {
+  width: 5px;
+}
 
-    .option-card i {
-        font-size: 1.5rem;
-    }
+.dev-console::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dev-console::-webkit-scrollbar-thumb {
+  background: rgba(106, 240, 106, 0.2);
+  border-radius: 4px;
+}
+
+/* ============================================
+   RESPONSIVE  (Mobile / Portrait)
+   ============================================ */
+@media (max-width: 900px), (orientation: portrait) {
+  .customizer-wrapper {
+    margin-top: 120px;
+    padding: 16px 4%;
+  }
+
+  .customizer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-container {
+    order: 1;
+    position: relative;
+    top: auto;
+    min-height: auto;
+  }
+
+  .controls-container {
+    order: 2;
+    margin-bottom: 60px;
+  }
+
+  .options-grid {
+    gap: 10px;
+  }
+
+  .option-card {
+    padding: 16px 8px;
+  }
+
+  .option-card i {
+    font-size: 1.5rem;
+  }
+
+  .control-group {
+    padding: 24px 20px;
+  }
+
+  .control-group h3 {
+    font-size: 20px;
+  }
+
+  .pet-display {
+    width: 260px;
+    height: 200px;
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .barra-superior h1 {
+    font-size: 18px;
+  }
+
+  .preview-container h3 {
+    font-size: 22px;
+  }
 }
