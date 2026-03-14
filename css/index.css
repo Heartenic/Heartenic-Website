@@ -750,6 +750,12 @@ h2 {
     border-radius: 22px;
   }
 
+  .hero-btn-primary {
+    padding: 0.8rem 1.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+  }
+
   h2,
   .tech-stack-title,
   .roadmap-title {

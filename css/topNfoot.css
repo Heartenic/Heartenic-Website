@@ -113,7 +113,7 @@
 
 @media (max-width: 768px) {
   .barra-superior h1 {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .barra-superior .logo {
@@ -121,7 +121,7 @@
   }
 
   .barra-superior .login {
-    padding: 12px 22px;
-    font-size: 14px;
+    padding: 10px 18px;
+    font-size: 12px;
   }
 }
