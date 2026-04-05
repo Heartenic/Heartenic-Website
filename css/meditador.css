@@ -203,10 +203,11 @@ body {
 }
 
 .floating-device {
-  max-width: 100%;
+  max-width: 60%;
   height: auto;
   filter: drop-shadow(0 20px 60px rgba(208, 51, 96, 0.25));
   animation: floatingAnimation 6s ease-in-out infinite;
+  margin-top: 75px;
 }
 
 @keyframes floatingAnimation {
@@ -394,4 +395,13 @@ body {
   .cta-buttons {
     flex-direction: column;
   }
+
+  .floating-device {
+    max-width: 75%;
+  }
+
+  .hero-section {
+    margin-top: 50px;
+  }
+
 }
