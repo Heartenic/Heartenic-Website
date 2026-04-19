@@ -4,127 +4,152 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El Meditador de Bolsillo - Heartenic</title>
+  <meta name="description" content="El Meditador de Bolsillo: una guía física de respiración y meditación. Portátil, sin distracciones, con retroalimentación háptica. Open source.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="El Meditador de Bolsillo - Heartenic">
+  <meta property="og:description" content="El Meditador de Bolsillo: una guía física de respiración y meditación. Portátil, sin distracciones, con retroalimentación háptica. Open source.">
+  <meta property="og:image" content="images/meditador1.webp">
+  <meta property="og:site_name" content="Heartenic">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="El Meditador de Bolsillo - Heartenic">
+  <meta name="twitter:description" content="El Meditador de Bolsillo: una guía física de respiración y meditación. Portátil, sin distracciones, con retroalimentación háptica. Open source.">
+  <meta name="twitter:image" content="images/meditador1.webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/meditador.css">
   <link rel="stylesheet" href="css/topNfoot.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="shortcut icon" href="images/logoHeartenic.png">
+  <link rel="shortcut icon" href="images/logoHeartenic.webp">
 </head>
 
 <body>
   <div class="animated-gradient-bg"></div>
   
-  <div class="barra-superior">
+  <nav class="barra-superior">
     <a href="index.html">
-      <img class="logo" src="images/logoHeartenic.png" alt="Logo Heartenic">
+      <img class="logo" src="images/logoHeartenic.webp" alt="Logo Heartenic" width="75" height="75">
     </a>
-    <h1>Heartenic</h1>
+    <span class="brand-name">Heartenic</span>
     <a class="login" href="logInSoon.html">
       Iniciar sesión
     </a>
-  </div>
+  </nav>
 
-  <section class="hero-section">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="hero-title">El Meditador de Bolsillo</h1>
-        <p class="hero-subtitle">Tu pausa, en cualquier lugar</p>
-        <p class="hero-description">
-          Una guía física de respiración y meditación que te acompaña con una pequeña pantalla que indica el
-          ritmo y un motor de vibración que te lo hace sentir. <strong>Físico, tangible y 100% enfocado.</strong>
-        </p>
-        <div class="cta-buttons">
-          <a href="#features" class="btn-primary">Descubre más</a>
-          <a href="customizer.html" class="btn-secondary">¡Personaliza el tuyo!</a>
+  <main>
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">El Meditador de Bolsillo</h1>
+          <p class="hero-subtitle">Tu pausa, en cualquier lugar</p>
+          <p class="hero-description">
+            Una guía física de respiración y meditación que te acompaña con una pequeña pantalla que indica el
+            ritmo y un motor de vibración que te lo hace sentir. <strong>Físico, tangible y 100% enfocado.</strong>
+          </p>
+          <div class="cta-buttons">
+            <a href="#features" class="btn-primary">Descubre más</a>
+            <a href="customizer.html" class="btn-secondary">¡Personaliza el tuyo!</a>
+          </div>
         </div>
+        
+        <div class="device-container">
+          <div class="floating-elements">
+            <div class="float-circle"></div>
+            <div class="float-circle"></div>
+            <div class="float-circle"></div>
+          </div>
+          <img src="images/meditador1.webp" alt="El Meditador de Bolsillo" class="floating-device" width="767" height="1024">
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features-section">
+      <div class="section-header">
+        <h2 class="section-title">Diseñado para la Calma</h2>
+        <p class="section-subtitle">
+          Increíblemente sencillo y natural de usar. Sin distracciones. Sin notificaciones. Solo tú y tu respiración.
+        </p>
       </div>
       
-      <div class="device-container">
-        <div class="floating-elements">
-          <div class="float-circle"></div>
-          <div class="float-circle"></div>
-          <div class="float-circle"></div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">🎯</span>
+          <h3>Simplicidad Ante Todo</h3>
+          <p>No es un gadget más, es una invitación a la calma. Un solo botón es todo lo que necesitas.</p>
         </div>
-        <img src="images/meditador1.png" alt="El Meditador de Bolsillo" class="floating-device">
+        
+        <div class="feature-card">
+          <span class="feature-icon">📳</span>
+          <h3>Retroalimentación Háptica</h3>
+          <p>Motor de vibración que te guía suavemente a través de cada respiración, creando una conexión táctil.</p>
+        </div>
+        
+        <div class="feature-card">
+          <span class="feature-icon">🌊</span>
+          <h3>Tres Modos de Uso</h3>
+          <ul>
+            <li><strong>Un clic:</strong> ejercicio breve guiado</li>
+            <li><strong>Tres clics:</strong> modo meditación continua</li>
+            <li><strong>Clic largo:</strong> ver estadísticas de uso</li>
+          </ul>
+        </div>
+        
+        <div class="feature-card">
+          <span class="feature-icon">✋</span>
+          <h3>Ergonómico y Portátil</h3>
+          <p>Forma compacta que se adapta perfectamente a tu mano. Llévalo en la bolsa o en el bolsillo.</p>
+        </div>
+        
+        <div class="feature-card">
+          <span class="feature-icon">🎨</span>
+          <h3>Personalizable</h3>
+          <p>Elige los tiempos de cada ciclo y el arte del dipositivo, adaptalo a tu forma personal de meditar.</p>
+        </div>
+        
+        <div class="feature-card">
+          <span class="feature-icon">🛠️</span>
+          <h3>Open Source</h3>
+          <p>El diseño y el código están abiertos. Puedes estudiarlo, modificarlo o incluso construir tu propia versión.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="features" class="features-section">
-    <div class="section-header">
-      <h2 class="section-title">Diseñado para la Calma</h2>
-      <p class="section-subtitle">
-        Increíblemente sencillo y natural de usar. Sin distracciones. Sin notificaciones. Solo tú y tu respiración.
+    <section class="cto-section">
+      <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Open Source y Accesible</h2>
+      <p class="section-text" style="font-size: 18px; text-align: center; max-width: 800px; margin: 0 auto 30px;">
+        El Meditador de Bolsillo no es solo una idea: es un dispositivo funcional, probado y con un alto nivel de
+        desarrollo técnico. <strong>Estamos trabajando para que muy pronto puedas comprar el tuyo</strong>.
       </p>
-    </div>
-    
-    <div class="features-grid">
-      <div class="feature-card">
-        <span class="feature-icon">🎯</span>
-        <h3>Simplicidad Ante Todo</h3>
-        <p>No es un gadget más, es una invitación a la calma. Un solo botón es todo lo que necesitas.</p>
+      <p class="section-text" style="font-size: 18px; text-align: center; max-width: 800px; margin: 0 auto 40px;">
+        También creemos que <strong>este proyecto le pertenece a todos</strong>. Por eso liberamos el diseño y el código como
+        <strong>open source</strong>. No solo para que puedas ver cómo está hecho, sino para que puedas adaptarlo, mejorarlo
+        o incluso construir tu propia versión.
+      </p>
+      <div style="text-align: center;">
+        <a href="herramientas.html" class="btn-primary">Ver Documentación Completa</a>
       </div>
-      
-      <div class="feature-card">
-        <span class="feature-icon">📳</span>
-        <h3>Retroalimentación Háptica</h3>
-        <p>Motor de vibración que te guía suavemente a través de cada respiración, creando una conexión táctil.</p>
-      </div>
-      
-      <div class="feature-card">
-        <span class="feature-icon">🌊</span>
-        <h3>Tres Modos de Uso</h3>
-        <p>
-          <li><strong>Un clic:</strong> ejercicio breve guiado</li>
-          <li><strong>Tres clics:</strong> modo meditación continua</li>
-          <li><strong>Clic largo:</strong> ver estadísticas de uso</li>
-        </p>
-      </div>
-      
-      <div class="feature-card">
-        <span class="feature-icon">✋</span>
-        <h3>Ergonómico y Portátil</h3>
-        <p>Forma compacta que se adapta perfectamente a tu mano. Llévalo en la bolsa o en el bolsillo.</p>
-      </div>
-      
-      <div class="feature-card">
-        <span class="feature-icon">🎨</span>
-        <h3>Personalizable</h3>
-        <p>Elige los tiempos de cada ciclo y el arte del dipositivo, adaptalo a tu forma personal de meditar.</p>
-      </div>
-      
-      <div class="feature-card">
-        <span class="feature-icon">🛠️</span>
-        <h3>Open Source</h3>
-        <p>El diseño y el código están abiertos. Puedes estudiarlo, modificarlo o incluso construir tu propia versión.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="cto-section">
-    <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Open Source y Accesible</h2>
-    <p class="section-text" style="font-size: 18px; text-align: center; max-width: 800px; margin: 0 auto 30px;">
-      El Meditador de Bolsillo no es solo una idea: es un dispositivo funcional, probado y con un alto nivel de
-      desarrollo técnico. <strong>Estamos trabajando para que muy pronto puedas comprar el tuyo</strong>.
-    </p>
-    <p class="section-text" style="font-size: 18px; text-align: center; max-width: 800px; margin: 0 auto 40px;">
-      También creemos que <strong>este proyecto le pertenece a todos</strong>. Por eso liberamos el diseño y el código como
-      <strong>open source</strong>. No solo para que puedas ver cómo está hecho, sino para que puedas adaptarlo, mejorarlo
-      o incluso construir tu propia versión.
-    </p>
-    <div style="text-align: center;">
-      <a href="herramientas.html" class="btn-primary">Ver Documentación Completa</a>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <div class="footer">
+  <footer class="footer">
     <p style="font-size: 1.2rem; margin: 0;">© 2026 Heartenic</p>
 
     <div class="social-icons-footer">
-      <a href="https://www.instagram.com/heartenic/" target="_blank" class="social-icon-link-footer">
+      <a href="https://www.instagram.com/heartenic/" target="_blank" rel="noopener noreferrer" class="social-icon-link-footer" aria-label="Instagram de Heartenic">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="https://www.youtube.com/@Heartenic" target="_blank" class="social-icon-link-footer">
+      <a href="https://www.youtube.com/@Heartenic" target="_blank" rel="noopener noreferrer" class="social-icon-link-footer" aria-label="YouTube de Heartenic">
         <i class="fab fa-youtube"></i>
       </a>
     </div>
@@ -132,7 +157,7 @@
     <p style="font-size: 1.2rem; margin: 0;">
       Tecnología consciente para el bienestar humano.
     </p>
-  </div>
+  </footer>
 
   <script src="scripts/animations.js"></script>
 </body>

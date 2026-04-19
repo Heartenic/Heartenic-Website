@@ -23,6 +23,7 @@
 
 .barra-superior .logo {
   height: 75px;
+  width: auto;
   transition: transform 0.3s ease;
   filter: drop-shadow(0 2px 8px rgba(208, 51, 96, 0.18));
 }
@@ -31,7 +32,7 @@
   transform: scale(1.1) rotate(5deg);
 }
 
-.barra-superior h1 {
+.barra-superior .brand-name {
   font-size: 36px;
   font-weight: 800;
   color: var(--rose-dark);
@@ -112,7 +113,7 @@
 }
 
 @media (max-width: 768px) {
-  .barra-superior h1 {
+  .barra-superior .brand-name {
     font-size: 24px;
   }
 

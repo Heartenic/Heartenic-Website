@@ -1,64 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
-
-:root {
-  --rose-primary: #D03360;
-  --rose-light: #E8607E;
-  --rose-dark: #A8224A;
-  --sage-green: #8BA888;
-  --sage-green-light: #A8C5A4;
-  --sage-green-dark: #6B8E68;
-  --off-white: #FAFAF8;
-  --dark-gray: #1A1A1A;
-  --medium-gray: #4A4A4A;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+/* 404.css — Error page-specific styles */
+/* base.css provides: tokens, reset, body, mesh-gradient-bg, meshBreathing, fadeInUp, holoBtn */
 
 body {
-  font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--off-white);
-  color: var(--dark-gray);
-  overflow-x: hidden;
-  line-height: 1.6;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.mesh-gradient-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: linear-gradient(135deg, #FAFAF8 0%, #FDF0F4 50%, #FEF6F9 100%);
-  animation: meshBreathing 20s ease-in-out infinite;
-}
-
-@keyframes meshBreathing {
-
-  0%,
-  100% {
-    background: linear-gradient(135deg, #FAFAF8 0%, #FDF0F4 50%, #FEF6F9 100%);
-  }
-
-  33% {
-    background: linear-gradient(135deg, #FEF6F9 0%, #FAFAF8 50%, #FDF0F4 100%);
-  }
-
-  66% {
-    background: linear-gradient(135deg, #FDF0F4 0%, #FEF6F9 50%, #FAFAF8 100%);
-  }
 }
 
 .error-container {
@@ -163,18 +110,6 @@ body {
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.4s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
 }
 
 .btn-home {

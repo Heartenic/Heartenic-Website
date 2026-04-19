@@ -1,36 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
-
-:root {
-  --rose-primary: #D03360;
-  --rose-light: #E8607E;
-  --rose-lighter: #F4ADC0;
-  --rose-dark: #A8224A;
-  --rose-bg: #FDF0F4;
-  --sage-green: #8BA888;
-  --sage-green-light: #A8C5A4;
-  --sage-green-dark: #6B8E68;
-  --off-white: #FAFAF8;
-  --dark-gray: #1A1A1A;
-  --medium-gray: #4A4A4A;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--off-white);
-  color: var(--dark-gray);
-  overflow-x: hidden;
-  line-height: 1.6;
-}
+/* meditador.css — Meditador product page-specific styles */
+/* base.css provides: tokens, reset, body, mesh-gradient-bg, fadeInUp, holoBtn */
 
 .animated-gradient-bg {
   position: fixed;
@@ -108,18 +77,6 @@ body {
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.6s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
 }
 
 .cta-buttons {

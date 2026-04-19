@@ -2,161 +2,185 @@
 <html lang="es">
 
 <head>
-  <title>Heartenic - Cultiva tu mundo interno</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heartenic - Cultiva tu mundo interno</title>
   <meta name="description" content="Heartenic — Pocket Meditator. Tecnología consciente para el bienestar humano.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Heartenic - Cultiva tu mundo interno">
+  <meta property="og:description" content="Heartenic — Pocket Meditator. Tecnología consciente para el bienestar humano.">
+  <meta property="og:image" content="images/logoHeartenic.webp">
+  <meta property="og:site_name" content="Heartenic">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Heartenic - Cultiva tu mundo interno">
+  <meta name="twitter:description" content="Heartenic — Pocket Meditator. Tecnología consciente para el bienestar humano.">
+  <meta name="twitter:image" content="images/logoHeartenic.webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/topNfoot.css">
-  <link rel="shortcut icon" href="images/logoHeartenic.png">
+  <link rel="shortcut icon" href="images/logoHeartenic.webp">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
   <div class="mesh-gradient-bg"></div>
 
-  <div class="barra-superior">
+  <nav class="barra-superior">
     <a href="index.html">
-      <img class="logo" src="images/logoHeartenic.png" alt="Logo Heartenic">
+      <img class="logo" src="images/logoHeartenic.webp" alt="Logo Heartenic" width="75" height="75">
     </a>
-    <h1>Heartenic</h1>
+    <span class="brand-name">Heartenic</span>
     <a class="login" href="logInSoon.html">
       Iniciar sesión
     </a>
-  </div>
+  </nav>
 
-  <div class="landing">
-    <canvas id="heroCanvas"></canvas>
+  <main>
+    <section class="landing">
+      <canvas id="heroCanvas"></canvas>
 
-    <div class="hero-container">
-      <h1 class="hero-title">Cultiva tu mundo interno</h1>
-      <p class="hero-subtitle">Un futuro más humano empieza contigo.<br>Tecnología consciente para el bienestar.</p>
-      <div class="hero-cta-group">
-        <a class="hero-btn-primary" href="#conoce-mas">Descubrir más</a>
-        <a href="https://www.instagram.com/heartenic/" target="_blank" class="hero-social-link" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
+      <div class="hero-container">
+        <h1 class="hero-title">Cultiva tu mundo interno</h1>
+        <p class="hero-subtitle">Un futuro más humano empieza contigo.<br>Tecnología consciente para el bienestar.</p>
+        <div class="hero-cta-group">
+          <a class="hero-btn-primary" href="#conoce-mas">Descubrir más</a>
+          <a href="https://www.instagram.com/heartenic/" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/@Heartenic" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="icono-bajar" id="scroll-arrow-btn" role="button" aria-label="Ir a la siguiente sección" tabindex="0">
+        <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" fill="none" stroke="#D03360" />
+          <path class="scroll-arrow" d="M12 8v8m0 0l-3-3m3 3l3-3" stroke="#D03360" stroke-width="2" />
+        </svg>
+      </div>
+    </section>
+
+    <h2 id="conoce-mas">Conoce más</h2>
+
+    <section class="grid-grid">
+      <div class="grid-container">
+        <a class="content-container reveal-on-scroll" href="about.html">
+          <h3>Conócenos Mejor</h3>
+          <div class="linea-horizontal"></div>
+          <p class="texto-contenido">Atrévete a descubrir quiénes somos y lo que nos impulsa a crear.</p>
+          <div class="contenedor-imagen" style="background: linear-gradient(135deg, #FFE5E5 0%, #FFF0F0 100%);">
+            <img class="imagen-contenido" src="images/conocenosTres.webp" alt="Imagen de una persona floreciendo" loading="lazy" width="800" height="550">
+          </div>
+          <p style="text-align: center;">Leer más ></p>
         </a>
-        <a href="https://www.youtube.com/@Heartenic" target="_blank" class="hero-social-link" aria-label="YouTube">
-          <i class="fab fa-youtube"></i>
+
+        <a class="content-container reveal-on-scroll" href="meditador.html">
+          <h3>El Meditador de Bolsillo</h3>
+          <div class="linea-horizontal"></div>
+          <p class="texto-contenido">Tu pausa, en cualquier lugar.</p>
+          <div class="contenedor-imagen" style="background: linear-gradient(135deg, #FFFBEA 0%, #FFF8DC 100%);">
+            <img class="imagen-contenido" src="images/meditadoresDos.webp" alt="Imagen del meditador de bolsillo Heartenic" loading="lazy" width="800" height="550"
+              style="filter: drop-shadow(0 -4px 18px rgba(0,0,0,0.15));">
+          </div>
+          <p style="text-align: center;">Leer más ></p>
+        </a>
+
+        <a class="content-container reveal-on-scroll" href="herramientas.html">
+          <h3>Herramientas para Desarrolladores</h3>
+          <div class="linea-horizontal"></div>
+          <p class="texto-contenido">Explora los recursos open-source para crear tecnología consciente.</p>
+          <div class="contenedor-imagen" style="background: linear-gradient(135deg, #E8F4F8 0%, #F0F8FF 100%);">
+            <img class="imagen-contenido" src="images/herramientas.webp" alt="Herramientas de creadores" loading="lazy" width="800" height="550">
+          </div>
+          <p style="text-align: center;">Leer más ></p>
         </a>
       </div>
-    </div>
+    </section>
 
-    <div class="icono-bajar" id="scroll-arrow-btn" role="button" aria-label="Ir a la siguiente sección" tabindex="0">
-      <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10" fill="none" stroke="#D03360" />
-        <path class="scroll-arrow" d="M12 8v8m0 0l-3-3m3 3l3-3" stroke="#D03360" stroke-width="2" />
-      </svg>
-    </div>
-  </div>
+    <section class="roadmap-section">
+      <h2 class="roadmap-title">Nuestro Camino</h2>
 
-  <h2 id="conoce-mas">Conoce más</h2>
+      <div class="timeline">
 
-  <div class="grid-grid">
-    <div class="grid-container">
-      <a class="content-container reveal-on-scroll" href="about.html">
-        <h3>Conócenos Mejor</h3>
-        <div class="linea-horizontal"></div>
-        <p class="texto-contenido">Atrévete a descubrir quiénes somos y lo que nos impulsa a crear.</p>
-        <div class="contenedor-imagen" style="background: linear-gradient(135deg, #FFE5E5 0%, #FFF0F0 100%);">
-          <img class="imagen-contenido" src="images/conocenosTres.png" alt="Imagen de una persona floreciendo">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">2025</div>
+            <h3>Fundaciones</h3>
+            <ul class="timeline-list">
+              <li>Desarrollo del Meditador de Bolsillo</li>
+              <li>Publicación de los primeros proyectos open-source</li>
+              <li>Establecimiento de la base de Heartenic</li>
+            </ul>
+          </div>
         </div>
-        <p style="text-align: center;">Leer más ></p>
-      </a>
 
-      <a class="content-container reveal-on-scroll" href="meditador.html">
-        <h3>El Meditador de Bolsillo</h3>
-        <div class="linea-horizontal"></div>
-        <p class="texto-contenido">Tu pausa, en cualquier lugar.</p>
-        <div class="contenedor-imagen" style="background: linear-gradient(135deg, #FFFBEA 0%, #FFF8DC 100%);">
-          <img class="imagen-contenido" src="images/meditadoresDos.png" alt="Imagen del meditador"
-            style="filter: drop-shadow(0 -4px 18px rgba(0,0,0,0.15));">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">2026</div>
+            <h3>Primer Ecosistema</h3>
+            <ul class="timeline-list">
+              <li>Primeros dispositivos en manos de usuarios</li>
+              <li>Construcción de una comunidad inicial alrededor del proyecto</li>
+              <li>Expansión y nuevas herramientas</li>
+            </ul>
+          </div>
         </div>
-        <p style="text-align: center;">Leer más ></p>
-      </a>
 
-      <a class="content-container reveal-on-scroll" href="herramientas.html">
-        <h3>Herramientas para Desarrolladores</h3>
-        <div class="linea-horizontal"></div>
-        <p class="texto-contenido">Explora los recursos open-source para crear tecnología consciente.</p>
-        <div class="contenedor-imagen" style="background: linear-gradient(135deg, #E8F4F8 0%, #F0F8FF 100%);">
-          <img class="imagen-contenido" src="images/herramientas.png" alt="Herramientas de creadores">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Etapa 3</div>
+            <h3>Sistemas Inteligentes</h3>
+            <ul class="timeline-list">
+              <li>Integración de sensores fisiológicos avanzados</li>
+              <li>Desarrollo de modelos de bienestar personalizados</li>
+              <li>Generación de insights para el usuario</li>
+            </ul>
+          </div>
         </div>
-        <p style="text-align: center;">Leer más ></p>
-      </a>
-    </div>
-  </div>
 
-  <section class="roadmap-section">
-    <h2 class="roadmap-title">Nuestro Camino</h2>
-
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">2025</div>
-          <h4>Fundaciones</h4>
-          <ul class="timeline-list">
-            <li>Desarrollo del Meditador de Bolsillo</li>
-            <li>Publicación de los primeros proyectos open-source</li>
-            <li>Establecimiento de la base de Heartenic</li>
-          </ul>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Etapa 4</div>
+            <h3>El Ecosistema Heartenic</h3>
+            <ul class="timeline-list">
+              <li>Ecosistema completo de dispositivos y software</li>
+              <li>Perfil integral de bienestar del usuario</li>
+              <li>Acompañamiento tecnológico consciente</li>
+              <li>Herramientas para cultivar una vida más equilibrada</li>
+            </ul>
+          </div>
         </div>
+
       </div>
+    </section>
+  </main>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">2026</div>
-          <h4>Primer Ecosistema</h4>
-          <ul class="timeline-list">
-            <li>Primeros dispositivos en manos de usuarios</li>
-            <li>Construcción de una comunidad inicial alrededor del proyecto</li>
-            <li>Expansión y nuevas herramientas</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">Etapa 3</div>
-          <h4>Sistemas Inteligentes</h4>
-          <ul class="timeline-list">
-            <li>Integración de sensores fisiológicos avanzados</li>
-            <li>Desarrollo de modelos de bienestar personalizados</li>
-            <li>Generación de insights para el usuario</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">Etapa 4</div>
-          <h4>El Ecosistema Heartenic</h4>
-          <ul class="timeline-list">
-            <li>Ecosistema completo de dispositivos y software</li>
-            <li>Perfil integral de bienestar del usuario</li>
-            <li>Acompañamiento tecnológico consciente</li>
-            <li>Herramientas para cultivar una vida más equilibrada</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="footer">
+  <footer class="footer">
     <p style="font-size: 1.2rem; margin: 0;">© 2026 Heartenic</p>
 
     <div class="social-icons-footer">
-      <a href="https://www.instagram.com/heartenic/" target="_blank" class="social-icon-link-footer">
+      <a href="https://www.instagram.com/heartenic/" target="_blank" rel="noopener noreferrer" class="social-icon-link-footer" aria-label="Instagram de Heartenic">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="https://www.youtube.com/@Heartenic" target="_blank" class="social-icon-link-footer">
+      <a href="https://www.youtube.com/@Heartenic" target="_blank" rel="noopener noreferrer" class="social-icon-link-footer" aria-label="YouTube de Heartenic">
         <i class="fab fa-youtube"></i>
       </a>
     </div>
@@ -164,7 +188,7 @@
     <p style="font-size: 1.2rem; margin: 0;">
       Tecnología consciente para el bienestar humano.
     </p>
-  </div>
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
   <script src="scripts/animations.js"></script>

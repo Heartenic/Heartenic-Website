@@ -5,9 +5,32 @@
     <title>Heartenic - Personalizar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <meta name="description" content="Personaliza tu Meditador de Bolsillo. Elige tu ritmo de respiración, compañero visual y flashea el firmware directamente desde tu navegador.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Heartenic - Personalizar tu Meditador">
+    <meta property="og:description" content="Personaliza tu Meditador de Bolsillo. Elige tu ritmo de respiración, compañero visual y flashea el firmware directamente desde tu navegador.">
+    <meta property="og:image" content="images/logoHeartenic.webp">
+    <meta property="og:site_name" content="Heartenic">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Heartenic - Personalizar tu Meditador">
+    <meta name="twitter:description" content="Personaliza tu Meditador de Bolsillo. Elige tu ritmo de respiración, compañero visual y flashea el firmware directamente desde tu navegador.">
+    <meta name="twitter:image" content="images/logoHeartenic.webp">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/customizer.css">
     <link rel="stylesheet" href="css/topNfoot.css">
-    <link rel="shortcut icon" href="images/logoHeartenic.png">
+    <link rel="shortcut icon" href="images/logoHeartenic.webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -31,122 +54,124 @@
     <div class="mesh-gradient-bg"></div>
 
     <!-- Barra fija superior -->
-    <div class="barra-superior">
+    <nav class="barra-superior">
         <a href="index.html">
-            <img class="logo" src="images/logoHeartenic.png" alt="Logo Heartenic">
+            <img class="logo" src="images/logoHeartenic.webp" alt="Logo Heartenic" width="75" height="75">
         </a>
-        <h1>Heartenic</h1>
+        <span class="brand-name">Heartenic</span>
         <a class="login" href="logInSoon.html">
             Iniciar sesión
         </a>
-    </div>
+    </nav>
 
-    <h2 class="subtitle">Personaliza tu Meditador</h2>
+    <main>
+        <h1 class="subtitle">Personaliza tu Meditador</h1>
 
-    <div class="customizer-wrapper">
+        <div class="customizer-wrapper">
 
-        <div class="customizer-grid">
+            <div class="customizer-grid">
 
-            <div class="preview-container content-container">
-                <h3>Vista Previa</h3>
-                <div class="linea-horizontal"></div>
+                <div class="preview-container content-container">
+                    <h3>Vista Previa</h3>
+                    <div class="linea-horizontal"></div>
 
-                <div class="pet-display" style="background-color: #000000;">
-                    <img id="pet-image" src="images/mascota_1.png" alt="Mascota seleccionada"
-                        class="imagen-mascota-animada">
-                </div>
+                    <div class="pet-display" style="background-color: #000000;">
+                        <img id="pet-image" src="images/mascota_1.webp" alt="Mascota seleccionada"
+                            class="imagen-mascota-animada" width="619" height="762">
+                    </div>
 
-                <div class="breath-info">
-                    <h4 id="breath-title-display">Respiraciones: Cortas</h4>
-                    <div class="breath-table">
-                        <div class="breath-stat">
-                            <span class="stat-label">Inhalar</span>
-                            <span class="stat-value" id="val-inhale">4s</span>
+                    <div class="breath-info">
+                        <h4 id="breath-title-display">Respiraciones: Cortas</h4>
+                        <div class="breath-table">
+                            <div class="breath-stat">
+                                <span class="stat-label">Inhalar</span>
+                                <span class="stat-value" id="val-inhale">4s</span>
+                            </div>
+                            <div class="breath-stat">
+                                <span class="stat-label">Sostener</span>
+                                <span class="stat-value" id="val-hold">4s</span>
+                            </div>
+                            <div class="breath-stat">
+                                <span class="stat-label">Exhalar</span>
+                                <span class="stat-value" id="val-exhale">4s</span>
+                            </div>
+                            <div class="breath-stat">
+                                <span class="stat-label">Descanso</span>
+                                <span class="stat-value" id="val-rest">0s</span>
+                            </div>
                         </div>
-                        <div class="breath-stat">
-                            <span class="stat-label">Sostener</span>
-                            <span class="stat-value" id="val-hold">4s</span>
-                        </div>
-                        <div class="breath-stat">
-                            <span class="stat-label">Exhalar</span>
-                            <span class="stat-value" id="val-exhale">4s</span>
-                        </div>
-                        <div class="breath-stat">
-                            <span class="stat-label">Descanso</span>
-                            <span class="stat-value" id="val-rest">0s</span>
-                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="breathChart"></canvas>
                     </div>
                 </div>
 
-                <div class="chart-container">
-                    <canvas id="breathChart"></canvas>
-                </div>
-            </div>
+                <div class="controls-container">
 
-            <div class="controls-container">
-
-                <div class="control-group" id="group-rhythm">
-                    <h3>1. Elige tu Ritmo</h3>
-                    <p class="control-subtitle">Controla la longitud de tus respiraciones</p>
-                    <div class="options-grid">
-                        <button class="option-card rhythm-btn active" data-rhythm="corto">
-                            <i class="fas fa-water"></i>
-                            <span>Corto</span>
-                        </button>
-                        <button class="option-card rhythm-btn" data-rhythm="medio">
-                            <i class="fas fa-wind"></i>
-                            <span>Medio</span>
-                        </button>
-                        <button class="option-card rhythm-btn" data-rhythm="largo">
-                            <i class="fas fa-om"></i>
-                            <span>Largo</span>
-                        </button>
+                    <div class="control-group" id="group-rhythm">
+                        <h3>1. Elige tu Ritmo</h3>
+                        <p class="control-subtitle">Controla la longitud de tus respiraciones</p>
+                        <div class="options-grid">
+                            <button class="option-card rhythm-btn active" data-rhythm="corto">
+                                <i class="fas fa-water"></i>
+                                <span>Corto</span>
+                            </button>
+                            <button class="option-card rhythm-btn" data-rhythm="medio">
+                                <i class="fas fa-wind"></i>
+                                <span>Medio</span>
+                            </button>
+                            <button class="option-card rhythm-btn" data-rhythm="largo">
+                                <i class="fas fa-om"></i>
+                                <span>Largo</span>
+                            </button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="control-group" id="group-personality">
-                    <h3>2. Elige tu Compañero</h3>
-                    <p class="control-subtitle">Elige el arte y personalidad de tu dispositivo</p>
-                    <div class="options-grid">
-                        <button class="option-card personality-btn active" data-personality="minimalista">
-                            <i class="fa-solid fa-earth-asia"></i>
-                            <span>Espacio</span>
-                        </button>
-                        <button class="option-card personality-btn" data-personality="buho">
-                            <i class="fas fa-crow"></i>
-                            <!-- Crow as close approximation to owl if owl not available, or use feather -->
-                            <span>Buho</span>
-                        </button>
-                        <button class="option-card personality-btn" data-personality="gato">
-                            <i class="fas fa-cat"></i>
-                            <span>Gato</span>
-                        </button>
+                    <div class="control-group" id="group-personality">
+                        <h3>2. Elige tu Compañero</h3>
+                        <p class="control-subtitle">Elige el arte y personalidad de tu dispositivo</p>
+                        <div class="options-grid">
+                            <button class="option-card personality-btn active" data-personality="minimalista">
+                                <i class="fa-solid fa-earth-asia"></i>
+                                <span>Espacio</span>
+                            </button>
+                            <button class="option-card personality-btn" data-personality="buho">
+                                <i class="fas fa-crow"></i>
+                                <!-- Crow as close approximation to owl if owl not available, or use feather -->
+                                <span>Buho</span>
+                            </button>
+                            <button class="option-card personality-btn" data-personality="gato">
+                                <i class="fas fa-cat"></i>
+                                <span>Gato</span>
+                            </button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="control-group">
-                    <h3>3. Conexión</h3>
-                    <p class="control-subtitle">Asegurate de que tu meditador este encendido</p>
-                    <button class="action-btn" id="btn-connect">
-                        <i class="fas fa-plug"></i> Conectar Meditador
-                    </button>
-                    <div id="connection-status" class="status-badge status-disconnected">Desconectado</div>
-                </div>
-
-                <div class="control-group" id="group-flash" style="opacity: 0.5; pointer-events: none;">
-                    <h3>4. Flashear</h3>
-                    <p class="control-subtitle">¡Todo listo!</p>
-                    <button class="action-btn" id="btn-flash">
-                        <i class="fas fa-microchip"></i> Grabar Firmware
-                    </button>
-                    <div class="progress-bar">
-                        <div id="progress-fill" class="progress-fill"></div>
+                    <div class="control-group">
+                        <h3>3. Conexión</h3>
+                        <p class="control-subtitle">Asegurate de que tu meditador este encendido</p>
+                        <button class="action-btn" id="btn-connect">
+                            <i class="fas fa-plug"></i> Conectar Meditador
+                        </button>
+                        <div id="connection-status" class="status-badge status-disconnected">Desconectado</div>
                     </div>
-                    <p id="status-text" class="status-text">Esperando...</p>
+
+                    <div class="control-group" id="group-flash" style="opacity: 0.5; pointer-events: none;">
+                        <h3>4. Flashear</h3>
+                        <p class="control-subtitle">¡Todo listo!</p>
+                        <button class="action-btn" id="btn-flash">
+                            <i class="fas fa-microchip"></i> Grabar Firmware
+                        </button>
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                        <p id="status-text" class="status-text">Esperando...</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Terminal Log (Dev info — hidden by default) -->
     <div class="dev-info">
@@ -154,16 +179,16 @@
         <div id="log-container" class="dev-console" style="display:none;"></div>
     </div>
 
-    <div class="footer">
+    <footer class="footer">
         <p style="font-size: 1.2rem; margin: 0;">© 2026 Heartenic</p>
         <div class="social-icons-footer">
-            <a href="https://www.instagram.com/heartenic/" target="_blank" class="social-icon-link-footer"><i
+            <a href="https://www.instagram.com/heartenic/" target="_blank" rel="noopener noreferrer" class="social-icon-link-footer" aria-label="Instagram de Heartenic"><i
                     class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@Heartenic" target="_blank" class="social-icon-link-footer"><i
+            <a href="https://www.youtube.com/@Heartenic" target="_blank" rel="noopener noreferrer" class="social-icon-link-footer" aria-label="YouTube de Heartenic"><i
                     class="fab fa-youtube"></i></a>
         </div>
         <p style="font-size: 1.2rem; margin: 0;">Tecnología consciente para el bienestar humano.</p>
-    </div>
+    </footer>
 
     <script type="module" src="scripts/customizer.js"></script>
 </body>

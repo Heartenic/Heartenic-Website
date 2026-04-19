@@ -5,45 +5,70 @@
   <title>Heartenic - Beta Testers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
+  <meta name="description" content="Conoce a los beta testers del Meditador de Bolsillo de Heartenic. Primeros usuarios que están probando la tecnología consciente.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Heartenic - Beta Testers">
+  <meta property="og:description" content="Conoce a los beta testers del Meditador de Bolsillo de Heartenic. Primeros usuarios que están probando la tecnología consciente.">
+  <meta property="og:image" content="images/logoHeartenic.webp">
+  <meta property="og:site_name" content="Heartenic">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Heartenic - Beta Testers">
+  <meta name="twitter:description" content="Conoce a los beta testers del Meditador de Bolsillo de Heartenic. Primeros usuarios que están probando la tecnología consciente.">
+  <meta name="twitter:image" content="images/logoHeartenic.webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/testers.css">
   <link rel="stylesheet" href="css/topNfoot.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="shortcut icon" href="images/logoHeartenic.png">
+  <link rel="shortcut icon" href="images/logoHeartenic.webp">
 </head>
 
 <body>
   <div class="mesh-gradient-bg"></div>
 
   <!-- Barra fija superior -->
-  <div class="barra-superior">
+  <nav class="barra-superior">
     <a href="index.html">
-      <img class="logo" src="images/logoHeartenic.png" alt="Logo Heartenic">
+      <img class="logo" src="images/logoHeartenic.webp" alt="Logo Heartenic" width="75" height="75">
     </a>
-    <h1>Heartenic</h1>
+    <span class="brand-name">Heartenic</span>
     <a class="login" href="logInSoon.html">
       Iniciar sesión
     </a>
-  </div>
+  </nav>
 
-  <h2 class="subtitle">Beta Testers</h2>
+  <main>
+    <h1 class="subtitle">Beta Testers</h1>
 
-  <div class="testers-content">
-    <div class="tester-card">
-      <img class="tester-photo" src="images/luisAngel.PNG" alt="imagen Luis Angel, el primer beta tester">
-      <h3 class="tester-name">Luis Angel Gonzalez</h3>
-      <span class="tester-badge"><i class="fas fa-medal"></i> Beta Tester #001</span>
-    </div>
-  </div>
+    <section class="testers-content">
+      <div class="tester-card">
+        <img class="tester-photo" src="images/luisAngel.webp" alt="imagen Luis Angel, el primer beta tester" loading="lazy" width="548" height="512">
+        <h3 class="tester-name">Luis Angel Gonzalez</h3>
+        <span class="tester-badge"><i class="fas fa-medal"></i> Beta Tester #001</span>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <div class="footer">
+  <footer class="footer">
     <p style="font-size: 1.2rem; margin: 0;">© 2026 Heartenic</p>
 
     <div class="social-icons-footer">
-      <a href="https://www.instagram.com/heartenic/" target="_blank" class="social-icon-link-footer">
+      <a href="https://www.instagram.com/heartenic/" target="_blank" rel="noopener noreferrer" class="social-icon-link-footer" aria-label="Instagram de Heartenic">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="https://www.youtube.com/@Heartenic" target="_blank" class="social-icon-link-footer">
+      <a href="https://www.youtube.com/@Heartenic" target="_blank" rel="noopener noreferrer" class="social-icon-link-footer" aria-label="YouTube de Heartenic">
         <i class="fab fa-youtube"></i>
       </a>
     </div>
@@ -51,7 +76,7 @@
     <p style="font-size: 1.2rem; margin: 0;">
       Tecnología consciente para el bienestar humano.
     </p>
-  </div>
+  </footer>
 </body>
 
 </html>

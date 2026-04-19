@@ -1,0 +1,96 @@
+/* ==============================================
+   base.css — Heartenic Shared Design System
+   Tokens, resets, and common animations.
+   Loaded on every page BEFORE page-specific CSS.
+   ============================================== */
+
+:root {
+  --rose-primary: #D03360;
+  --rose-light: #E8607E;
+  --rose-lighter: #F4ADC0;
+  --rose-dark: #A8224A;
+  --rose-bg: #FDF0F4;
+  --rose-bg-subtle: #FEF6F9;
+  --sage-green: #8BA888;
+  --sage-green-light: #A8C5A4;
+  --sage-green-dark: #6B8E68;
+  --off-white: #FAFAF8;
+  --dark-gray: #1A1A1A;
+  --medium-gray: #4A4A4A;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--off-white);
+  color: var(--dark-gray);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Shared animated mesh-gradient background */
+.mesh-gradient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #FAFAF8 0%, #FDF0F4 50%, #FEF6F9 100%);
+  animation: meshBreathing 20s ease-in-out infinite;
+}
+
+@keyframes meshBreathing {
+
+  0%,
+  100% {
+    background: linear-gradient(135deg, #FAFAF8 0%, #FDF0F4 50%, #FEF6F9 100%);
+  }
+
+  33% {
+    background: linear-gradient(135deg, #FEF6F9 0%, #FAFAF8 50%, #FDF0F4 100%);
+  }
+
+  66% {
+    background: linear-gradient(135deg, #FDF0F4 0%, #FEF6F9 50%, #FAFAF8 100%);
+  }
+}
+
+/* Common entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Holographic button sweep */
+@keyframes holoBtn {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

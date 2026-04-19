@@ -31,9 +31,9 @@ const cycleData = {
 };
 
 const petImages = {
-    space: 'images/mascota_3.png',   // Corazón anatómico
-    buho: 'images/mascota_1.png',          // Búho dibujado
-    gato: 'images/mascota_2.png'            // Gato dibujado
+    space: 'images/mascota_3.webp',   // Corazón anatómico
+    buho: 'images/mascota_1.webp',          // Búho dibujado
+    gato: 'images/mascota_2.webp'            // Gato dibujado
 };
 
 let breathChart = null;
