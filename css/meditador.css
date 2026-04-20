@@ -267,7 +267,7 @@
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
 }
 
@@ -337,6 +337,16 @@
 }
 
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  main {
+    overflow-x: hidden;
+  }
+
   .hero-title {
     font-size: 38px;
   }
@@ -353,6 +363,10 @@
     flex-direction: column;
   }
 
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
   .floating-device {
     max-width: 75%;
   }
@@ -360,5 +374,4 @@
   .hero-section {
     margin-top: 50px;
   }
-
 }
